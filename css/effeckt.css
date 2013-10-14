@@ -1,0 +1,611 @@
+/* line 6, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='pop-in'] {
+  overflow: hidden;
+}
+
+/* line 9, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='pop-in'] .new-item {
+  max-height: 0;
+  opacity: 0;
+  transform: translateX(-300px);
+  animation: openSpace 500ms ease forwards, moveIn 750ms 500ms ease forwards;
+}
+
+/* line 17, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='pop-in'] .remove-item {
+  max-height: 50px;
+  opacity: 1;
+  animation: moveOut 750ms 500ms ease forwards, closeSpace 500ms ease forwards 750ms;
+}
+
+@keyframes openSpace {
+  /* line 25, ../sass/modules/list-items.scss */
+  to {
+    max-height: 50px;
+  }
+}
+
+@keyframes moveIn {
+  /* line 30, ../sass/modules/list-items.scss */
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveOut {
+  /* line 36, ../sass/modules/list-items.scss */
+  to {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+}
+
+@keyframes closeSpace {
+  /* line 42, ../sass/modules/list-items.scss */
+  to {
+    max-height: 0px;
+  }
+
+  /* line 45, ../sass/modules/list-items.scss */
+  from {
+    max-height: 50px;
+  }
+}
+
+/* line 52, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='expand-in'] .new-item {
+  max-height: 0;
+  opacity: 0;
+  transform: scale(0);
+  animation: growHeight 500ms ease forwards;
+}
+
+/* line 58, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='expand-in'] .remove-item {
+  animation: shrinkHeight 500ms ease forwards;
+}
+
+@keyframes growHeight {
+  /* line 62, ../sass/modules/list-items.scss */
+  to {
+    max-height: 50px;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shrinkHeight {
+  /* line 70, ../sass/modules/list-items.scss */
+  to {
+    max-height: 0;
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  /* line 75, ../sass/modules/list-items.scss */
+  from {
+    max-height: 50px;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* line 83, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='wobble-in'] .new-item {
+  backface-visibility: visible;
+  animation: WobbleInX 2500ms both 500ms, openSpace 500ms ease forwards;
+}
+
+/* line 89, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='wobble-in'] .remove-item {
+  backface-visibility: visible;
+  animation: WobbleOutX 2500ms both 500ms, closeSpace 1000ms ease forwards 1500ms;
+}
+
+@keyframes WobbleInX {
+  /* line 96, ../sass/modules/list-items.scss */
+  0% {
+    transform: perspective(250px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  /* line 100, ../sass/modules/list-items.scss */
+  40% {
+    transform: perspective(250px) rotateX(-10deg);
+  }
+
+  /* line 103, ../sass/modules/list-items.scss */
+  70% {
+    transform: perspective(250px) rotateX(10deg);
+  }
+
+  /* line 106, ../sass/modules/list-items.scss */
+  100% {
+    transform: perspective(250px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes WobbleOutX {
+  /* line 112, ../sass/modules/list-items.scss */
+  0% {
+    transform: perspective(250px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  /* line 116, ../sass/modules/list-items.scss */
+  100% {
+    transform: perspective(250px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+/* line 124, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='flip-in'] .new-item {
+  backface-visibility: visible;
+  transform-origin: top left;
+  animation: FlipIn 2500ms both 500ms, openSpace 500ms ease forwards;
+}
+
+/* line 131, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='flip-in'] .remove-item {
+  backface-visibility: visible;
+  transform-origin: top left;
+  animation: FlipOut 2500ms both 500ms, closeSpace 1000ms ease forwards 1000ms;
+}
+
+@keyframes FlipIn {
+  /* line 139, ../sass/modules/list-items.scss */
+  0% {
+    transform: perspective(300px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  /* line 143, ../sass/modules/list-items.scss */
+  100% {
+    transform: perspective(300px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes FlipOut {
+  /* line 149, ../sass/modules/list-items.scss */
+  0% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  /* line 153, ../sass/modules/list-items.scss */
+  100% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+/* line 161, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='fall-in'] .new-item {
+  backface-visibility: visible;
+  animation: openSpace 1000ms ease forwards, fallInX 1000ms both;
+}
+
+/* line 167, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='fall-in'] .remove-item {
+  backface-visibility: visible;
+  transform-origin: top left;
+  animation: fallOffX 1000ms both, closeSpace 750ms ease forwards 500ms;
+}
+
+@keyframes fallInX {
+  /* line 175, ../sass/modules/list-items.scss */
+  0% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+
+  /* line 179, ../sass/modules/list-items.scss */
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fallOffX {
+  /* line 185, ../sass/modules/list-items.scss */
+  0% {
+    opacity: 1;
+    transform: rotateZ(0);
+  }
+
+  /* line 189, ../sass/modules/list-items.scss */
+  100% {
+    opacity: 0;
+    transform: translateY(200px) rotateZ(90deg);
+  }
+}
+
+/* line 197, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='from-above'] .new-item {
+  backface-visibility: visible;
+  animation: openSpace 1000ms ease forwards, fromAbove 1000ms both 500ms;
+}
+
+/* line 203, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='from-above'] .remove-item {
+  backface-visibility: visible;
+  animation: toAbove 1000ms both, closeSpace 500ms ease forwards 650ms;
+}
+
+@keyframes fromAbove {
+  /* line 210, ../sass/modules/list-items.scss */
+  0% {
+    opacity: 0;
+    transform: scale(3);
+  }
+
+  /* line 214, ../sass/modules/list-items.scss */
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes toAbove {
+  /* line 220, ../sass/modules/list-items.scss */
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* line 224, ../sass/modules/list-items.scss */
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+/* line 231, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='wobble-out'] .new-item {
+  backface-visibility: visible;
+  animation: openSpace 1000ms ease forwards, fallInX 1000ms both;
+}
+
+/* line 237, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='wobble-out'] .remove-item {
+  backface-visibility: visible;
+  transform-origin: top left;
+  animation: wobbleOutY 1500ms both 500ms, closeSpace 500ms ease forwards 1500ms;
+}
+
+@keyframes wobbleOutY {
+  /* line 245, ../sass/modules/list-items.scss */
+  0% {
+    opacity: 1;
+    transform: rotateZ(0);
+  }
+
+  /* line 249, ../sass/modules/list-items.scss */
+  20% {
+    opacity: 1;
+    transform: rotateZ(140deg);
+  }
+
+  /* line 253, ../sass/modules/list-items.scss */
+  40% {
+    opacity: 1;
+    transform: rotateZ(60deg);
+  }
+
+  /* line 257, ../sass/modules/list-items.scss */
+  60% {
+    opacity: 1;
+    transform: rotateZ(110deg);
+  }
+
+  /* line 261, ../sass/modules/list-items.scss */
+  70% {
+    opacity: 1;
+    transform: rotateZ(90deg) translateX(0);
+  }
+
+  /* line 265, ../sass/modules/list-items.scss */
+  90% {
+    opacity: 1;
+    transform: rotateZ(90deg) translateX(400px);
+  }
+
+  /* line 269, ../sass/modules/list-items.scss */
+  100% {
+    opacity: 0;
+    transform: rotateZ(90deg) translateX(400px);
+  }
+}
+
+/* line 277, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='bouncy-slide-in'] .new-item {
+  backface-visibility: visible;
+  animation: bouncySlideIn 1000ms both, openSpace 500ms ease forwards;
+}
+
+/* line 283, ../sass/modules/list-items.scss */
+.effeckt-list[data-effeckt-type='bouncy-slide-in'] .remove-item {
+  backface-visibility: visible;
+  animation: fallOffY 1500ms both 500ms, closeSpace 500ms ease forwards 1625ms;
+}
+
+@keyframes bouncySlideIn {
+  /* line 290, ../sass/modules/list-items.scss */
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+
+  /* line 294, ../sass/modules/list-items.scss */
+  70% {
+    opacity: 1;
+    transform: translateX(-50px);
+  }
+
+  /* line 298, ../sass/modules/list-items.scss */
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fallOffY {
+  /* line 304, ../sass/modules/list-items.scss */
+  0% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) rotateZ(0deg);
+  }
+
+  /* line 308, ../sass/modules/list-items.scss */
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) rotateZ(0deg);
+  }
+
+  /* line 312, ../sass/modules/list-items.scss */
+  75% {
+    opacity: 0.75;
+    transform: translateX(-50%) translateY(0) rotateZ(-30deg);
+  }
+
+  /* line 316, ../sass/modules/list-items.scss */
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(300px) rotateZ(-60deg);
+  }
+}
+
+/* line 3, ../sass/modules/list-scroll.scss */
+.effeckt-list-scroll {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 400px;
+}
+/* line 9, ../sass/modules/list-scroll.scss */
+.effeckt-list-scroll > li {
+  position: relative;
+  z-index: 2;
+  transform: translateZ(0);
+}
+
+/* line 18, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="grow"] li {
+  transition: all 500ms ease;
+  transform-origin: 50% 50%;
+}
+/* line 21, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="grow"] li.past, [data-effeckt-type="grow"] li.future {
+  transform: scale(0.01);
+}
+
+/* line 28, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="curl"] li {
+  perspective: 600px;
+  perspective-origin: 0% 50%;
+  transition: all 500ms ease, opacity 166.66667ms ease;
+  transform-origin: 0% 0%;
+  backface-visibility: hidden;
+}
+/* line 37, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="curl"] li.past {
+  opacity: 0;
+  transform: rotateY(90deg);
+}
+/* line 41, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="curl"] li.future {
+  opacity: 0;
+  transform: rotateY(90deg);
+}
+
+/* line 48, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="wave"] li {
+  transition: all 500ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+/* line 50, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="wave"] li.past {
+  transform: translateX(-70%);
+}
+/* line 53, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="wave"] li.future {
+  transform: translateX(-70%);
+}
+
+/* line 59, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="fan"] li {
+  transition: all 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  transform-origin: 0% 0%;
+}
+/* line 62, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="fan"] li.past {
+  transform: rotate(-60deg);
+}
+/* line 65, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="fan"] li.future {
+  transform: rotate(70deg);
+}
+
+/* line 71, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="fade"] li {
+  transition: opacity 250ms ease-in-out;
+}
+/* line 74, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="fade"] li.past, [data-effeckt-type="fade"] li.future {
+  opacity: 0;
+}
+
+/* line 80, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="fly"] {
+  perspective: 400px;
+  perspective-origin: 50% 50%;
+}
+/* line 83, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="fly"] li {
+  transition: all 500ms ease, opacity 250ms ease;
+  transform-origin: 50% 50% -50px;
+}
+/* line 87, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="fly"] li.past, [data-effeckt-type="fly"] li.future {
+  opacity: 0;
+}
+/* line 90, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="fly"] li.past {
+  transform: rotateX(180deg);
+}
+/* line 93, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="fly"] li.future {
+  transform: rotateX(-180deg);
+}
+
+/* line 100, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="landing"] {
+  perspective: 400px;
+  perspective-origin: 50% 50%;
+}
+/* line 103, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="landing"] li {
+  transition: all 500ms ease, opacity 250ms ease;
+  transform-origin: 50% 50%;
+}
+/* line 106, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="landing"] li.past, [data-effeckt-type="landing"] li.future {
+  opacity: 0;
+}
+/* line 109, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="landing"] li.past {
+  transform: scale(1.5) translate(10%, -50%);
+}
+/* line 112, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="landing"] li.future {
+  transform: scale(1.5) translate(-10%, 50%);
+}
+
+/* line 119, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="swing-front"] {
+  perspective: 400px;
+  perspective-origin: 50% 50%;
+}
+/* line 122, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="swing-front"] li {
+  transition: all 500ms ease, opacity 250ms ease;
+}
+/* line 124, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="swing-front"] li.past, [data-effeckt-type="swing-front"] li.future {
+  opacity: 0;
+}
+/* line 127, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="swing-front"] li.past {
+  transform-origin: bottom;
+  transform: rotateX(140deg);
+}
+/* line 131, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="swing-front"] li.future {
+  transform-origin: top;
+  transform: rotateX(-140deg);
+}
+
+/* line 139, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="swing-back"] {
+  perspective: 400px;
+  perspective-origin: 50% 50%;
+}
+/* line 142, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="swing-back"] li {
+  transition: all 500ms ease, opacity 250ms ease;
+}
+/* line 144, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="swing-back"] li.past, [data-effeckt-type="swing-back"] li.future {
+  opacity: 0;
+}
+/* line 147, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="swing-back"] li.past {
+  transform-origin: bottom;
+  transform: rotateX(-140deg);
+}
+/* line 151, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="swing-back"] li.future {
+  transform-origin: top;
+  transform: rotateX(140deg);
+}
+
+/* line 159, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="twist"] {
+  perspective: 400px;
+  perspective-origin: 50% 50%;
+}
+/* line 162, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="twist"] li {
+  transition: all 500ms ease, opacity 250ms ease;
+  transform-origin: center;
+}
+/* line 165, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="twist"] li.past, [data-effeckt-type="twist"] li.future {
+  opacity: 0;
+}
+/* line 168, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="twist"] li.past {
+  transform: rotateY(-180deg);
+}
+/* line 171, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="twist"] li.future {
+  transform: rotateY(180deg);
+}
+
+/* line 178, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="door"] {
+  perspective: 400px;
+  perspective-origin: 50% 50%;
+}
+/* line 181, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="door"] li {
+  transition: all 500ms ease, opacity 250ms ease;
+  transform-origin: 0% 0%;
+}
+/* line 184, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="door"] li.past, [data-effeckt-type="door"] li.future {
+  opacity: 0;
+  transform: rotateY(-90deg);
+}
+
+/* line 192, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="climb"] {
+  perspective: 400px;
+  perspective-origin: 50% 50%;
+}
+/* line 195, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="climb"] li {
+  transition: all 500ms ease, opacity 250ms ease;
+  transform-origin: 0% 0%;
+}
+/* line 198, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="climb"] li.past {
+  transform: translateY(-200%);
+}
+/* line 201, ../sass/modules/list-scroll.scss */
+[data-effeckt-type="climb"] li.future {
+  transform: translateY(200%);
+}

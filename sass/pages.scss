@@ -1,0 +1,398 @@
+/**
+ * @file
+ * Page Styling
+ *
+ * Style the markup found in page.tpl.php. Also includes some styling of
+ * miscellaneous Drupal elements that appear in the $content variable, such as
+ * ul.links, .pager, .more-link, etc.
+ */
+
+
+@import "base";
+
+/*
+ * Body
+ */
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+}
+
+#page {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+/*
+ * The skip-link link will be completely hidden until a user tabs to the link.
+ * See the element-focusable rule in system.base.css.
+ */
+
+#skip-link {
+  margin: 0;
+
+  a,
+  a:visited {
+    display: block;
+    width: 100%;
+    padding: 2px 0 3px 0;
+    text-align: center;
+    background-color: #666;
+    color: #fff;
+  }
+}
+
+/*
+ * Header
+ */
+
+#header {
+  height: 45px;
+  background: lighten(black, 80%);
+  overflow: hidden;
+  border-bottom: solid lighten(black, 50%) 1px;
+  position: relative;
+  z-index: 2;
+  @include box-shadow(lighten(black, 50%) 0 0 0.5em);
+}
+body.front #header {
+  background: none;
+  color: lighten(black, 20%);
+  @include box-shadow(none);
+}
+
+#logo { /* Wrapping link for logo */
+  float: left;
+  margin: 0.5em 0 0 2em;
+  padding: 0;
+  vertical-align: bottom;
+  height: 2.6em;
+}
+
+#name-and-slogan { /* Wrapper for website name and slogan */
+  float: left;
+  font-size: 0.7em;
+  margin-left: 1.5em;
+  margin-top: 1.1em;
+  max-width: 50%;
+}
+
+#site-name { /* The name of the website */
+  margin: 0;
+  font-size: 2.4em;
+  line-height: 1.3;
+  @include ellipsis;
+  a:link,
+  a:visited {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+}
+
+#site-slogan { /* The slogan (or tagline) of a website */
+  margin: 0;
+  font-size: 1em;
+  color: gray;
+  line-height: 1;
+  font-weight: normal;
+}
+
+.region-header { /* Wrapper for any blocks placed in the header region */
+  clear: both; /* Clear the logo */
+}
+
+/*
+ * Main (container for everything else)
+ */
+
+#main {
+  padding-top: 0;
+}
+
+/*
+ * Content
+ */
+
+#content-header {
+  margin: 0 -0.75em;
+  z-index: 1;
+  @include box-shadow(transparentize(black, 0.6) 0 0.3em 0.3em);
+}
+.front #content-header {
+  margin-bottom: 2em;
+  background: none;
+}
+
+#content-main {
+  margin: 1em auto;
+}
+
+.page-node-add {
+  #page-title,
+  #content-main { max-width: 100%; }
+}
+
+#content {
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  position: relative;
+}
+
+.region-highlighted {
+}
+
+$border: lighten(black, 75%);
+.breadcrumb { /* The path to the current page in the form of a list of links */
+  overflow: hidden;
+  margin-left: -0.75em;
+  margin-right: -0.75em;
+  background: lighten(black, 85%);
+  font-size: 1em;
+  span {
+    margin: 0 -0.2em;
+    a, a:after {
+      border: 0 $border solid;
+      background: lighten(black, 80%);
+    }
+    a {
+      line-height: 1.2;
+      padding: 0.3em 0.6em 0.3em 1.2em;
+      color: lighten(black, 40%);
+      margin: 0;
+      display: inline-block;
+      border-width: 0.2em 0;
+      position: relative;
+      height: 1.3em;
+      text-decoration: none;
+      white-space: nowrap;
+      max-width: 11em;
+      overflow: hidden;
+      &:after {
+        content: '';
+        display: block;
+        z-index: 1;
+        border-width: 0.2em 0.2em 0 0;
+        position: absolute;
+        top: 0.4em;
+        right: 0;
+        @include box-sizing(border-box);
+        height: 1em;
+        width: 1em;
+        @include transform(translateX(0.5em) rotate(45deg) scale(2.0/sqrt(3)) skewX(15deg) skewY(15deg));
+      }
+    }
+    a:hover, a:hover:after,
+    a:focus, a:focus:after {
+      background: lighten(black, 40%);
+      color: white;
+    }
+    &.first a,&.last { padding-left: 1.25em; }
+    &.delimiter { display: none; }
+  }
+}
+
+h1.title, /* The title of the page */
+h2.node-title, /* Title of a piece of content when it is given in a list of content */
+h2.block-title, /* Block title */
+h2.title, /* Comment section heading */
+h2.comment-form, /* Comment form heading */
+h3.title { /* Comment title */
+  margin: 0;
+}
+
+h1.title {
+  line-height: 1.2em;
+  font-size: 1.4em;
+  font-weight: normal;
+}
+#page-title {
+  margin: 0 auto;
+  padding: 0.5em;
+}
+
+tr.even { /* Some tables have rows marked even or odd. */
+  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+}
+
+tr.odd {
+  background-color: #eee; /* Drupal core uses a #eee background */
+}
+
+th, td { padding: 0.5em; }
+
+div.messages {
+}
+
+div.status { /* Normal priority messages */
+}
+
+div.warning,
+tr.warning { /* Medium priority messages */
+  /* border: 1px solid #f0c020; */ /* Drupal core uses: 1px solid #f0c020 */
+}
+
+div.error,
+tr.error { /* High priority messages. See also the .error declaration below. */
+}
+
+.error { /* Errors that are separate from div.messages status messages. */
+  /* color: #e55; */ /* Drupal core uses a #e55 background */
+}
+
+.warning { /* Warnings that are separate from div.messages status messages. */
+  /* color: #e09010; */ /* Drupal core uses a #e09010 background */
+}
+
+.tabs { /* See also the tabs.css file. */
+}
+
+.region-help { /* Help text on a page */
+}
+
+.more-help-link { /* Link to more help */
+}
+
+.region-content { /* Wrapper for the actual page content */
+}
+
+ul.inline { /* List of links generated by theme_links() */
+  display: inline;
+  padding: 0;
+
+  li {
+    display: inline;
+    list-style-type: none;
+    padding: 0 1em 0 0;
+  }
+}
+span.field-label { /* The inline field label used by the Fences module */
+  padding: 0 1em 0 0;
+}
+
+.item-list .pager { /* A list of page numbers when more than 1 page of content is available */
+  padding: 0;
+
+  li { /* Each page number in the pager list */
+    padding: 0 0.5em;
+  }
+}
+
+.feed-icon { /* The link to the RSS or Atom feed for the current list of content */
+}
+
+.more-link { /* Aggregator, blog, and forum more link */
+}
+
+/*
+ * First sidebar (on left in LTR languages, on right in RTL)
+ *
+ * Remember to NOT add padding or margin to your .region-sidebar-first
+ * (see the layout.css file.)
+ */
+
+.region-sidebar-first {
+}
+
+/*
+ * Second sidebar (on right in LTR languages, on left in RTL)
+ *
+ * Remember to NOT add padding or margin to your .region-sidebar-second
+ * (see the layout.css file.)
+ */
+
+.region-sidebar-second {
+}
+
+/*
+ * Footer
+ */
+
+#footer {
+}
+
+/*
+ * Page bottom
+ */
+
+.region-bottom { /* Wrapper for any blocks placed in the page bottom region */
+}
+
+#navigation {
+  display: none;
+  z-index: -1;
+  position: relative;
+} 
+
+#main-content {
+  display: block;
+  margin-bottom: 0;
+}
+
+#tooltip {
+  display: block;
+  width: 15em;
+  font-size: 0.9em;
+  background: rgba(255,255,255,0.3);
+  background: transparentize(white, 0.7);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  padding: 0.5em;
+  @include box-shadow(black 0 0 1em);
+  @include border-radius(1em);
+  @include border-bottom-left-radius(0);
+  h3 {
+    margin: 0;
+    line-height: 1.1;
+  }
+  p.host {
+    margin: 0;
+    @include ellipsis;
+  }
+}
+
+body.page-user.not-logged-in {
+  h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 2.4em;
+  }
+  ul.tabs-primary { display: none; }
+  #content {
+    margin: 0 auto;
+    padding: 1em;
+    background: lighten(black, 80%);
+    max-width: 30em;
+    @include border-bottom-radius(0.5em);
+  }
+}
+
+body.node-type-event {
+  height: auto;
+  #content-main {
+    @include clearfix;
+    .clearfix { @include clearfix; }
+  }
+}
+
+body.page-user {
+  a.twitter {
+    @include sassy-button;
+    white-space: nowrap;
+    margin: 0.5em 0 1em;
+    font-size: 2em;
+  }
+  #profile table {
+    tr { background: none; }
+    td { display: inline-block; }
+  }
+}

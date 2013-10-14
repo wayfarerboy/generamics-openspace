@@ -1,0 +1,358 @@
+/**
+ * @file
+ * Form Styling
+ */
+
+@import "base";
+
+.form-wrapper {
+  margin-bottom: 2.5em;
+  max-width: 100%;
+  &.filter-help { display: none; }
+}
+
+.form-item { /* Wrapper for a form element (or group of form elements) and its label */
+  margin: 1.5em 0;
+
+  input.error,
+  textarea.error,
+  select.error { /* Highlight the form elements that caused a form submission error */
+    border: 1px solid #c00;
+  }
+
+  label { /* The label for a form element */
+    color: #888888;
+    display: block;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 0 0 0.5em;
+  }
+
+  label.option { /* The label for a radio button or checkbox */
+    display: inline;
+    font-weight: normal;
+  }
+
+  .form-required { /* The part of the label that indicates a required field */
+    color: #c00;
+  }
+
+  .description { /* The descriptive help text (separate from the label) */
+    font-size: 0.85em;
+    margin-bottom: 1em;
+  }
+
+  .form-checkboxes & ,
+  .form-radios & { /* Pack groups of checkboxes and radio buttons closer together */
+    margin: 0; /* Drupal core uses "0.4em 0" */
+  }
+  .form-select {
+    max-width: 30em;
+    width: 100%;
+    @include ellipsis;
+  }
+}
+
+html.js input.form-autocomplete {
+  background-image: none;
+}
+
+.filter-wrapper {
+  .form-item.form-type-select { margin-top: 0; }
+  .filter-guidelines { margin-bottom: 0; }
+}
+
+.form-managed-file .form-file {
+  max-width: 70%;
+  margin-right: 0.5em;
+}
+
+.form-type-password-confirm {
+  max-width: 100%;
+  input.password-confirm, input.password-field { width: 12em; }
+  .confirm-parent,.password-parent { width: 25em; }
+  div.password-strength,div.password-confirm { font-size: 0.8em; width: 13em; }
+}
+
+#edit-title { max-width: 95%; }
+#edit-cancel {
+  @include sassy-button();
+  @include sassy-button-gradient('simple', gray);
+  font-size: 1em;
+  margin: 0.5em;
+}
+
+.form-submit { /* The submit button */
+  @include sassy-button;
+  font-size: 1em;
+  margin: 0.2em;
+}
+
+.form-submit.at-add-btn,
+.image-widget .form-submit {
+  @include sassy-button;
+}
+
+.container-inline {
+  div,
+  label { /* Inline labels and form divs */
+    display: inline;
+  }
+}
+
+.tips { /* Tips for Drupal's input formats */
+}
+
+a.button { /* Buttons used by contrib modules like Media */
+  @include appearance(button);
+}
+
+/*
+ * Password confirmation
+ */
+
+.password-parent,
+.confirm-parent {
+  margin: 0;
+}
+
+/*
+ * Search (search-block-form.tpl.php)
+ */
+
+#block-search-form { /* Wrapper for the search form */
+}
+
+/*
+ * Drupal's default login form block
+ */
+
+#user-login-form {
+  text-align: left;
+
+  /*
+   * OpenID
+   *
+   * The default styling for the OpenID login link seems to assume Garland's
+   * styling of list items.
+   */
+
+  ul { /* OpenID creates a new ul above the login form's links. */
+    margin-bottom: 0; /* Position OpenID's ul next to the rest of the links. */
+  }
+
+  html.js & li.openid-link,
+  li.openid-link { /* The "Log in using OpenID" link. */
+    margin-top: 1.5em;
+    margin-left: -20px; /* Un-do some of the padding on the ul list. */
+  }
+
+  li.user-link { /* The "Cancel OpenID login" link. */
+    margin-top: 1.5em;
+  }
+}
+
+#user-login ul {
+  margin: 1.5em 0;
+}
+
+/*
+ * Drupal admin tables
+ *
+ * We overrode these styles in normalize.css, but restore them for the admin
+ * section of the site.
+ */
+
+form {
+  margin: 0 auto;
+  th {
+    text-align: left;
+    padding-right: 1em;
+    border-bottom: 3px solid #ccc;
+  }
+
+  tbody {
+    border-top: 1px solid #ccc;
+  }
+
+  tr.even {
+    background-color: #fff;
+  }
+
+  table .item-list ul {
+    margin: 0;
+  }
+}
+
+@if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+  .lt-ie8 tr.even,
+  .lt-ie8 tr.odd {
+    th,
+    td {
+      border-bottom: 1px solid #ccc; /* IE doesn't display borders on table rows */
+    }
+  }
+}
+
+/*
+ * Drupal core wrongly puts this in system.menus.css. Since we override that, add it back.
+ */
+
+td.menu-disabled {
+  background: #ccc;
+}
+
+a.fieldset-title { color: lighten(black, 50%); }
+.at-term-entry { max-width: 70%; }
+
+#flag-confirm {
+  #edit-submit {
+    font-size: 1.5em;
+  }
+}
+
+#user-login,#user-pass {
+  #edit-name,#edit-pass {
+    font-size: 1.6em;
+    width: 100%;
+  }
+  #edit-submit { font-size: 1.3em; }
+  ul.hybridauth-widget { 
+    margin-bottom: 0;
+    text-align: center;
+    a {
+      @include sassy-button;
+      &.hybridauth-widget-provider { font-size: 1.8em; }
+    }
+  }
+  .or-separator { 
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 0.5em;
+    position: relative;
+    bottom: -0.8em;
+    text-align: center;
+    width: 1em;
+    z-index: 1;
+    background: lighten(black, 80%);
+    color: lighten(black, 60%);
+  }
+  hr {
+    border-color: lighten(black, 60%);
+    margin-bottom: 3em;
+    margin-top: 0;
+  }
+  h3,label { display: none; }
+  .form-item { margin-right: 1.5em; }
+  .password {
+    position: relative;
+    a {
+      font-size: 2.5em;
+      @include opacity(0.5);
+      position: absolute;
+      top: 50%;
+      margin-top: -0.65em;
+      right: 0.2em;
+      color: black;
+      &:hover { @include opacity(1); }
+    }
+  }
+}
+
+#hybridauth-user-identity {
+  h3 { margin-bottom: 0; }
+  ul.hybridauth-widget a {
+    @include sassy-button;
+  }
+}
+
+form.node-event-form {
+  .form-item-title,
+  #edit-field-logo,
+  #edit-field-max-concurrent-spaces,
+  #edit-field-post-limit-per-question,
+  #edit-field-max-conclusion-posts,
+  #edit-field-max-question-duration,
+  #edit-field-participants {
+    display: inline-block;
+    margin: 1em 3em 1em 0;
+    padding-right: 1em;
+    vertical-align: top;
+    .form-item { margin: 0; }
+    .form-submit { font-size: 0.9em; }
+    input { max-width: 100%; }
+    label {
+      white-space: nowrap;
+      i { margin-left: 0.3em; }
+    }
+  }
+  .form-item-title {
+    input { font-size: 1.2em; }
+    width: 24em;
+    margin-top: 1em;
+    #edit-title { width: 20em; }
+  }
+  #edit-field-body {
+    .form-type-textarea { margin-top: 0.5em; }
+    .filter-wrapper { margin-bottom: 0.5em; }
+  }
+  #edit-field-logo { width: 25em; }
+  #edit-field-max-concurrent-spaces { width: 6em; }
+  #edit-field-post-limit-per-question {
+    width: 6em;
+  }
+  #edit-field-max-conclusion-posts {
+    width: 7em;
+  }
+  #edit-field-max-concurrent-spaces,
+  #edit-field-post-limit-per-question,
+  #edit-field-max-conclusion-posts {
+    input { font-size: 1.1em; }
+  }
+  #edit-field-max-question-duration {
+    width: 15em;
+    margin-right: 2em;
+    .timeperiod-element {
+      white-space: nowrap;
+      select { width: auto; }
+    }
+    .field-suffix {
+      color: transparent;
+      display: inline-block;
+      width: 1em;
+      &:first-letter { color: lighten(black, 50%); }
+    }
+  }
+  #edit-field-participants {
+    font-size: 1.2em;
+    display: block;
+    .form-submit { font-size: 0.9em; }
+    .form-text { width: 67%; }
+    margin-bottom: 3em;
+    ul {
+      @include no-bullets;
+      padding: 0;
+      margin: 0;
+      margin-top: 1em;
+    }
+  }
+  #edit-field-status { display: none; }
+  div.vertical-tabs { display: none; }
+}
+
+form#question-node-form {
+  .form-wrapper,.vertical-tabs { display: none; }
+  #edit-actions { display: block; }
+  .form-item-title #edit-title { width: 95%; }
+}
+
+form#post-node-form {
+  .form-wrapper, .vertical-tabs { display: none; }
+  #edit-actions { display: block; }
+  #edit-field-body { display: block; }
+  #edit-field-body-und-0-format { display: none; }
+}
+
+@include form-skin-natural;

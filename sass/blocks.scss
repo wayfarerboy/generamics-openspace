@@ -1,0 +1,538 @@
+/**
+ * @file
+ * Block Styling
+ */
+
+@import "base";
+
+.block { /* Block wrapper */
+  margin-bottom: 1.5em;
+
+  &.first { /* The first block in the region */
+  }
+
+  &.last { /* The last block in the region */
+  }
+
+  &.odd { /* Zebra striping for each block in the region */
+  }
+
+  &.even { /* Zebra striping for each block in the region */
+  }
+
+  h2.block-title { /* Block title */
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+    font-weight: normal;
+    color: lighten(black, 50%);
+  }
+}
+
+
+#block-aggregator-category-1 { /* Block for the latest news items in the first category */
+}
+
+#block-aggregator-feed-1 { /* Block for the latest news items in the first feed */
+}
+
+#block-block-1 { /* First block created with "Add block" link */
+}
+
+#block-blog-recent { /* "Recent blog posts" block */
+}
+
+#block-book-navigation { /* "Book navigation" block for the current book's table of contents */
+}
+
+#block-comment-recent { /* "Recent comments" block */
+}
+
+#block-forum-active { /* "Active forum topics" block */
+}
+
+#block-forum-new { /* "New forum topics" block */
+}
+
+#block-locale-language { /* Language switcher block */
+}
+
+#block-menu-menu-NAME { /* Custom menu block */
+}
+
+#block-node-recent { /* "Recent content" block */
+}
+
+#block-node-syndicate { /* "Syndicate" block for primary RSS feed; see also page.css's .feed-icon */
+}
+
+#block-poll-recent { /* "Most recent poll" block */
+}
+
+#block-profile-author-information { /* "Author information" block for the profile of the page's author */
+}
+
+#block-search-form { /* "Search form" block */
+}
+
+#block-shortcut-shortcuts { /* "Shortcuts" block */
+}
+
+#block-statistics-popular { /* "Popular content" block */
+}
+
+#block-system-main-menu { /* "Main menu" block */
+}
+
+#block-system-management { /* "Management" block for Drupal management menu */
+}
+
+#block-system-navigation { /* "Navigation" block for Drupal navigation menu */
+}
+
+#block-system-user-menu { /* "User menu" block for Drupal user menu */
+}
+
+#block-system-help { /* "System help" block */
+}
+
+#block-system-main { /* "Main page content" block */
+}
+
+#block-system-powered-by { /* "Powered by Drupal" block */
+}
+
+#block-user-login { /* "User login form" block */
+}
+
+#block-user-new { /* "Who's new" block for a list of the newest users */
+}
+
+#block-user-online { /* "Who's online" block for a list of the online users */
+}
+
+.menu-name-user-menu {
+  display: none;
+}
+
+#users,#questions,#events {
+  text-align: center;
+  @include text-shadow(transparentize(white, 0.3) 0em 1px 0);
+  //@include pointer-events;
+  img {
+    @include border-radius(0.5em);
+    @include box-shadow(transparentize(black, 0.5) 0 0 1em);
+  }
+}
+
+#users,#questions,#events {
+  position: absolute;
+  margin: 0;
+  h2 { display: none; }
+  ul {
+    margin: 0;
+    padding: 0;
+    @include no-bullets;
+    li {
+      position: absolute;
+      white-space: nowrap;
+      width: 12em;
+      display: block;
+      @include opacity(0.0);
+      @include transition(opacity 1s);
+      margin-left: -6em;
+      margin-top: -3em;
+      font-size: 0.75em;
+      &.active { @include opacity(1.0); }
+      &.root { font-size: 1em; }
+      img { width: 4em; }
+      p {
+        margin: 0.1em 0 0 0;
+      }
+    }
+  }
+}
+
+#users ul li {
+  width: 3em;
+  margin: -1.5em;
+  height: 3em;
+  p { display: none; }
+  img {
+    width: 3em;
+    @include border-radius(0.35em);
+  }
+}
+
+#questions ul li {
+  margin-top: -1.4em;
+  &.root {
+    margin-top: 2em;
+    p { font-weight: bold; }
+  }
+  p {
+    font-size: 1.6em;
+    color: transparentize(black, 0.2);
+  }
+}
+
+#events {
+  ul li {
+    font-weight: bold;
+    height: 8em;
+    margin-top: -4em;
+    white-space: normal;
+    @include opacity(1);
+    img {
+      @include transition(opacity 0.5s);
+      @include box-shadow(none);
+    }
+    img.badge {
+      @include opacity(0);
+    }
+    img.profile {
+      height: 4em;
+      left: 4em;
+      margin: 0;
+      position: absolute;
+      top: 2em;
+      width: 4em;
+      //cursor: pointer;
+      @include opacity(1);
+      @include border-radius(4em);
+    }
+    p {
+      margin: 0;
+      color: transparentize(black, 0.2);
+      display: none;
+    }
+    &.active {
+      img.badge { @include opacity(1); }
+      img.profile { @include opacity(0); }
+      p { display: block; }
+    }
+  }
+}
+.initialising,.animating {
+  #events ul li img {
+    &.profile, &.badge, &.profile.active, &.badge.active { @include opacity(0); }
+  }
+}
+
+li.activity,li.post { border: transparent solid 2px; }
+
+@include keyframes(slideDown) {
+  100% {
+    margin-bottom: 0.5em;
+    max-height: 2em; 
+  }
+}
+@include keyframes(slideUp) {
+  100% {
+    margin: 0;
+    max-height: 0;
+    padding: 0;
+  }
+}
+@include keyframes(slideDownPost) {
+  100% {
+    margin-bottom: 0.5em;
+    max-height: 40em; 
+    padding: 0.5em;
+  }
+}
+@include keyframes(moveIn) {
+  100% {
+    @include opacity(1);
+    @include translateX(0);
+  }
+}
+@include keyframes(moveOut) {
+  100% {
+    @include opacity(0);
+    @include translateX(-18em);
+  }
+}
+@keyframes shake {
+  0%, 100% { @include translateX(0);}
+  10%, 30%, 50%, 70%, 90% { @include translateX(-0.3em);}
+  20%, 40%, 60%, 80% { @include translateX(0.3em);}
+}
+
+#hashtags {
+  position: relative;
+  @include float-left;
+  top: 0;
+  left: 0;
+  font-size: 1.4em;
+  margin-bottom: 0;
+  overflow: visible;
+  width: 0;
+  h2 { display: none; }
+  ul {
+    width: 18em;
+    @include no-bullets;
+    margin: 0;
+    padding: 0;
+    li.activity {
+      position: relative;
+      @include translateX(-18em);
+      @include opacity(0);
+      max-height: 0;
+      border-width: 0;
+      overflow: hidden;
+      @include animation(moveOut 0.2s ease forwards, slideUp 0.3s 0.2s ease forwards);
+      &.active { @include animation(slideDown 0.2s ease forwards, moveIn 0.3s 0.2s ease forwards); }
+      &.expanded { @include transition(max-height 0.5s, min-height 0.5s); }
+      i.expand {
+        color: transparentize(black, 0.5);
+        font-size: 0.7em;
+        position: relative;
+        top: -0.2em;
+      }
+      a {
+        color: black;
+        cursor: default;
+        @include text-shadow(transparentize(white, 0.5) 1px 0);
+        span.hashtag, i.twitter, i.conclude {
+          cursor: pointer;
+          &:hover,&:active {
+            color: white;
+            @include text-shadow(transparentize(black, 0.5) 1px 0);
+            i.expand {
+              color: white;
+              @include text-shadow(transparentize(black, 0.5) 1px 0);
+            }
+            span.count { color: black; } 
+          }
+        }
+        span.hashtag {
+          padding: 0.4em 0.5em;
+          display: block;
+          margin-right: 2.5em;
+          border-right: transparentize(black, 0.5) 1px solid;
+          span.count {
+            @include float-right;
+            background-color: white;
+            @include opacity(0.5);
+            font-size: 0.6em;
+            text-align: center;
+            position: relative;
+            top: 0.3em;
+            line-height: 1.25;
+            padding: 0 0.3em;
+            @include text-shadow(none);
+          }
+        }
+        i.twitter, i.conclude {
+          @include float-right;
+          padding: 0.3em 0.5em;
+          font-size: 1.3em;
+          color: transparentize(black, 0.5);
+        }
+      }
+      &.concluding {
+        i.twitter { display: none; }
+        i.conclude { display: block; }
+      }
+      a i.conclude {
+        display: none;
+        &.inactive { @include opacity(0.3); }
+      }
+      a.shake span.hashtag,
+      a.shake span.conclude,
+      a span.hashtag.shake { @include animation(shake 0.5s ease forwards); }
+    }
+  }
+  .activity-data{
+    font-size: 0.65em;
+    @include clearfix;
+    width: 100%;
+    h2.activity {
+      display: block;
+      color: black;
+      margin: 0 0.5em;
+      font-size: 1.2em;
+      padding: 0.5em;
+      border: {
+        color: transparentize(black, 0.3);
+        style: solid;
+        width: 1px 0 0.2em 0;
+      }
+    }
+    a.play-all {
+      font-size: 1em;
+      padding: 0.666em;
+      margin: 0 1em;
+      display: block;
+      cursor: pointer;
+      position: relative;
+      color: white;
+      background: transparentize(black, 0.5);
+      @include text-shadow(transparentize(black, 0.5) 1px 0);
+      &:hover,&:active {
+        background: transparentize(black, 0.6);
+        color: transparentize(white, 0.4);
+      }
+      .status {
+        @include float-right;
+        margin-right: 2.5em;
+        color: transparentize(white, 0.3);
+      }
+      i {
+        @include reset-float;
+        display: inline;
+        padding: 0;
+      }
+      span.play-progress {
+        position: absolute;
+        right: 0;
+        top: 1.5em;
+        height: 1.5em;
+        width: 1.5em;
+        display: block;
+        overflow: visible;
+      }
+    }
+    a.play {
+      padding: 0.5em;        
+      color: transparentize(black, 0.5);
+      cursor: pointer;
+      position: relative;
+      @include text-shadow(transparentize(white, 0.5) 1px 0);
+      &:hover,&:active {
+        color: black;
+      }
+    }
+    &.playing a.play { display: none; }
+    ol {
+      @include no-bullets;
+      padding: 0;
+      margin: 0.5em;
+      li {
+        cursor: default;
+        font-size: 1.2em;
+        padding: 0;
+        margin: 0;
+        @include translateX(-18em);
+        @include opacity(0);
+        max-height: 0;
+        border: 0;
+        overflow: hidden;
+        @include border-radius(0.5em);
+        @include box-shadow(transparentize(black, 0.5) 0 0 1em);
+        @include text-shadow(transparentize(white, 0.5) 0 0.1em 0.1em);
+        @include animation(moveOut 0.2s ease forwards, slideUp 0.3s 0.2s ease forwards);
+        &.active {
+          @include animation(slideDownPost 0.2s ease forwards, moveIn 0.3s 0.2s ease forwards);
+        }
+        a {
+          cursor: pointer; 
+          color: transparentize(black, 0.3);
+          &:hover,&:focus { color: black; }
+        }
+        .opengraph-filter {
+          @include opacity(0.7);
+          &:hover,&:focus { @include opacity(1); }
+          a { color: black; }
+        }
+        &.selected {
+          color: white;
+          @include text-shadow(none);
+          p.date, .p-name, .p-nickname, a {
+            color: transparentize(white, 0.3);
+            @include text-shadow(none);
+          }
+          blockquote .opengraph-filter a {
+            color: transparentize(black, 0.3);
+          }
+        }
+      }
+    }
+    p.date {
+      margin: 0;
+      @include float-right;
+    }
+    img {
+      @include float-left;
+      margin-right: 0.8em;
+    }
+    blockquote {
+      line-height: 1.5;
+      margin: 0.5em 0 0 4.5em;
+      .opengraph-filter {
+        margin-left: -5em;
+        margin-top: 0.5em;
+        background: transparentize(white, 0.8);
+        font-size: 0.9em;
+      }
+    }
+    .p-name {
+      font-size: 1.1em;
+      font-weight: bold;
+      position: relative;
+      top: 0.3em;
+    }
+    .p-nickname, p.date {
+      font-size: 0.9em;
+      color: transparentize(black, 0.5);
+      position: relative;
+      top: 0.35em;
+      @include text-shadow(none);
+    }
+  }
+  li.activity.introjs-showElement a.discuss-link i.twitter {
+    color: white;
+    @include text-shadow(transparentize(black, 0.5) 1px 0);
+  }
+}
+
+.introjs-tooltip { z-index: 10; }
+
+#login {
+  margin: 0;
+  position: absolute;
+  right: 1em;
+  top: 0.6em;
+  a {
+    @include sassy-button;
+    font-size: 0.9em;
+  }
+}
+
+#friends {
+  display: none;
+}
+
+#edit-field-participants {
+  li.follower {
+    @include border-radius(0.5em);
+    display: block;
+    height: 1.6em;
+    line-height: 2.2;
+    margin: 0.1em 0;
+    padding: 0 0.5em 0.6em;
+    cursor: pointer;
+    img.swatch {
+      height: 1.5em;
+      margin-right: 0.5em;
+      margin-left: 0.5em;
+    }
+    i { @include opacity(0.0); }
+    p {
+      margin: 0;
+      display: inline;
+    }
+    &:hover {
+      background: darken(white, 20%);
+    }
+    &.active {
+      background-color: lighten(green, 50%);
+      i { @include opacity(1.0); }
+    }
+    a { color: black; }
+    p.description {
+      font-style: italic;
+      font-size: 0.9em;
+    }
+  }
+}

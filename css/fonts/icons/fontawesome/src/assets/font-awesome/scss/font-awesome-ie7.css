@@ -1,0 +1,73 @@
+/*
+Syntax error: Invalid CSS after "-": expected number or function, was "--"
+        on line 1 of /home/alpagan/Websites/lamp/drupal-7/sites/all/themes/generamics-openspace/sass/fonts/icons/fontawesome/src/assets/font-awesome/scss/font-awesome-ie7.scss
+
+1: /home/alpagan/Websites/lamp/drupal-7/sites/all/themes/generamics-openspace/sass/fonts/icons/fontawesome/src/assets/font-awesome/scss/font-awesome-ie7.scss
+
+Backtrace:
+/home/alpagan/Websites/lamp/drupal-7/sites/all/themes/generamics-openspace/sass/fonts/icons/fontawesome/src/assets/font-awesome/scss/font-awesome-ie7.scss:1
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:1145:in `expected'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:1083:in `expected'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:1065:in `expr!'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:921:in `term'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:896:in `expr'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:670:in `simple_selector_sequence'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:639:in `_selector'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:618:in `selector'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:602:in `selector_sequence'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:527:in `ruleset'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:552:in `block_child'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:542:in `block_contents'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:82:in `stylesheet'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/scss/parser.rb:27:in `parse'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/engine.rb:342:in `_to_tree'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/engine.rb:315:in `_render'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.10/lib/sass/engine.rb:262:in `render'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/commands/update_project.rb:45:in `perform'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-compass-0.0.8/lib/guard/compass.rb:136:in `perform'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-compass-0.0.8/lib/guard/compass.rb:119:in `run_on_change'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:99:in `block in run_supervised_task'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:97:in `catch'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:97:in `run_supervised_task'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:144:in `block in run_first_task_found'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:142:in `each'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:142:in `run_first_task_found'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:80:in `block in run_on_changes'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:175:in `block (3 levels) in scoped_guards'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:173:in `each'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:173:in `block (2 levels) in scoped_guards'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:172:in `catch'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:172:in `block in scoped_guards'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:170:in `each'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:170:in `scoped_guards'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard/runner.rb:72:in `run_on_changes'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard.rb:123:in `block (2 levels) in setup_listener'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard.rb:387:in `block in within_preserved_state'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard.rb:384:in `synchronize'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard.rb:384:in `within_preserved_state'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/guard-1.8.2/lib/guard.rb:122:in `block in setup_listener'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/listen-1.2.2/lib/listen/listener.rb:252:in `call'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/listen-1.2.2/lib/listen/listener.rb:252:in `on_change'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/listen-1.2.2/lib/listen/listener.rb:287:in `block in initialize_adapter'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/listen-1.2.2/lib/listen/adapter.rb:252:in `call'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/listen-1.2.2/lib/listen/adapter.rb:252:in `report_changes'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/listen-1.2.2/lib/listen/adapter.rb:321:in `poll_changed_directories'
+/home/alpagan/.rvm/gems/ruby-2.0.0-p0/gems/listen-1.2.2/lib/listen/adapter.rb:297:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"-\": expected number or function, was \"--\"\A         on line 1 of /home/alpagan/Websites/lamp/drupal-7/sites/all/themes/generamics-openspace/sass/fonts/icons/fontawesome/src/assets/font-awesome/scss/font-awesome-ie7.scss\A \A 1: /home/alpagan/Websites/lamp/drupal-7/sites/all/themes/generamics-openspace/sass/fonts/icons/fontawesome/src/assets/font-awesome/scss/font-awesome-ie7.scss"; }
