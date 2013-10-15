@@ -11,82 +11,14 @@ function generamics_openspace_theme() {
   return $items;
 }
 
-function generamics_openspace_generate_main_menu() {
-  global $user;
-  if ($user->uid) {
-    $text = '<i class="icon-fixed-width %s"></i> %s';
-    $subcontent = '';
-    $items = array();
-    $subitems = array();
-    $eid = 0;
-    if (is_numeric(arg(1))) {
-      $eid = arg(1);
-    }
-    $u = user_load($user->uid);
-    if ($user->uid == 1 || in_array('organiser', $user->roles)) {
-      $subitems[] = l(sprintf($text, 'icon-plus-sign-alt', 'Create event'), 'node/add/event', array('html'=>TRUE));
-      $subcontent .= theme('item_list', array('items'=>$subitems, 'title'=>''));
-      $result = views_get_view_result('active_event_lookup', 'admin_current');
-      $nids = array();
-      foreach($result as $row) {
-        $nids[] = $row->nid;
-      }
-      $subcontent .= generamics_openspace_main_menu_item($nids, $eid, $text);
-    } else {
-      $result = views_get_view_result('invitations', NULL, 'all', 'all', $user->uid);
-      $nids = array();
-      foreach($result as $row) {
-        $nids[] = $row->node_field_data_field_event_nid;
-      }
-      $subcontent .= generamics_openspace_main_menu_item($nids, $eid, $text);
-    }
-    $logout = theme('item_list', array('items'=>array(l(sprintf($text, 'icon-signout', 'Log out'), 'user/logout', array('html'=>TRUE)))));
-    $screen_name = $u->name;
-    if (count($u->twitter_accounts) > 0) {
-      $screen_name = $u->twitter_accounts[0]->screen_name;
-    }
-    $items[] = openspace_functions_format_twitter_username($u, 'user', $screen_name, 'profile', 'field_picture').$logout;
-    $items[] = l(sprintf($text, 'icon-calendar', 'Events'), 'events', array('html'=>true)).$subcontent;
-    $subcontent = theme('item_list', array('items'=>$subitems, 'title'=>''));
-    return theme('item_list', array('items'=>$items));
-  }
-  return '';
-}
-
-function generamics_openspace_main_menu_item($result, $eid, $text) {
-  $subcontent = '';
-  $icons = array('icon-envelope-alt', 'icon-list-ol', 'icon-comments-alt', 'icon-archive');
-  $last_term = null;
-  $subitems = array();
-  foreach($result as $row) {
-    $event = node_load($row);
-    $tids = field_get_items('node', $event, 'field_status');
-    $status = 'icon-calendar-empty';
-    if (is_array($tids) && count($tids) > 0) {
-      $term = taxonomy_term_load($tids[0]['tid']);
-      $status = $icons[intval($term->tid)-1];
-      if ($term->name != $last_term) {
-        if (count($subitems) > 0) {
-          $subcontent .= theme('item_list', array('items'=>$subitems, 'title'=>$last_term));
-          $subitems = array();
-        }
-        $last_term = $term->name;
-      }
-    }
-    $subitems[] = l(sprintf($text, $status, $event->title), 'node/'.$event->nid, array('html'=>TRUE, 'attributes'=>array('class'=>array($eid == $event->nid ? 'active' : ''))));
-  }
-  if (count($subitems) > 0) {
-    $subcontent .= theme('item_list', array('items'=>$subitems, 'title'=>$last_term));
-  }
-  return $subcontent;
-}
-
 function generamics_openspace_preprocess_html(&$variables) {
   global $user;
   if ($user->uid != 1 && arg(0) == 'user' && arg(2) == 'edit' && arg(3) == 'twitter' && !isset($_GET['override'])) {
     drupal_goto('user/'.arg(1));
-  } else if ($user->uid && drupal_is_front_page()) {
+  } else if ($user->uid && count($user->twitter_accounts) > 0 && drupal_is_front_page()) {
     drupal_goto('events');
+  /*} else if ($user->uid && count($user->twitter_accounts) == 0) {
+    drupal_goto('user/'.$user->uid); */
   } else {
     drupal_add_js('http://192.168.1.65:35729/livereload.js');
     if (module_exists('openspace_functions')) {
@@ -121,7 +53,6 @@ function generamics_openspace_preprocess_page(&$variables) {
     $main_menu = '<i class="icon-reorder"></i>';
     $variables['main_menu_link'] = l($main_menu, 'events', array('html'=>true, 'attributes'=>array('id'=>'main-menu-link')));
     $variables['main_menu'] = '';
-    //$variables['main_menu'] = generamics_openspace_generate_main_menu();
     if (in_array(arg(0), array('node', 'events')) && is_numeric(arg(1))) {
       $node = node_load(arg(1));
       if ($node->type == 'event') {
@@ -298,12 +229,14 @@ function generamics_openspace_preprocess_user_login(&$variables) {
 
 function generamics_openspace_preprocess_user_profile(&$variables) {
   global $user;
-  if ($user->uid == 1 || in_array(array('superuser', 'organiser'), $user->roles)) {
+  if ($user->uid == 1 || in_array('organiser', $user->roles) || count($user->twitter_accounts) == 0) {
+    if (count($user->twitter_accounts) == 0) {
+      openspace_functions_twitter_account_message();
+    }
     if (isset($variables['user_profile']['twitter'])) {
       $variables['data'] = '<div id="profile" class="loading has-account" data-url="'.url('user/'.$variables['user']->uid.'/edit/twitter', array('query'=>array('override'=>1))).' form#twitter-account-list-form"></div>';
     } else {
-      $variables['data'] = '<div id="profile" class="loading no-account" data-url="'.url('user/'.$variables['user']->uid.'/edit/twitter', array('query'=>array('override'=>1))).' form#twitter-auth-account-form">';
-      $variables['data'] .= '<p>In order to use this site, you need to link with your Twitter account.</p></div>';
+      $variables['data'] = '<div id="profile" class="loading no-account" data-url="'.url('user/'.$variables['user']->uid.'/edit/twitter', array('query'=>array('override'=>1))).' form#twitter-auth-account-form"></div>';
     }
   } else {
     drupal_goto('events');
