@@ -13,12 +13,14 @@ function generamics_openspace_theme() {
 
 function generamics_openspace_preprocess_html(&$variables) {
   global $user;
+  $user = user_load($user->uid);
   if ($user->uid != 1 && arg(0) == 'user' && arg(2) == 'edit' && arg(3) == 'twitter' && !isset($_GET['override'])) {
     drupal_goto('user/'.arg(1));
   } else if ($user->uid && count($user->twitter_accounts) > 0 && drupal_is_front_page()) {
     drupal_goto('events');
-  /*} else if ($user->uid && count($user->twitter_accounts) == 0) {
-    drupal_goto('user/'.$user->uid); */
+  } else if ($user->uid && arg(0) !== 'user' && count($user->twitter_accounts) == 0) {
+    openspace_functions_twitter_account_message();
+    drupal_goto('user/'.$user->uid);
   } else {
     drupal_add_js('http://192.168.1.65:35729/livereload.js');
     if (module_exists('openspace_functions')) {
@@ -80,10 +82,20 @@ function generamics_openspace_preprocess_page(&$variables) {
         }
       }
     }
-  } else {
-    if (!drupal_is_front_page()) {
-      $variables['title'] = 'Log in';
+    if ($_GET['edit']) {
+      if ($_GET['edit']['field_question_ref']) {
+      } else {
+        $eid = $_GET['edit']['field_event'][LANGUAGE_NONE];
+        if ($eid) {
+          $event = node_load($eid);
+          $variables['title'] = 'Submit a question for <em>'.$event->title.'</em>';
+        }
+      }
     }
+  } else {
+    /*if (!drupal_is_front_page()) {
+      $variables['title'] = 'Log in';
+    }*/
   }
 }
 
@@ -110,7 +122,7 @@ function generamics_openspace_preprocess_node(&$variables) {
     if (!$variables['is_active'] && !$variables['page']) {
       $variables['status'] = drupal_render($variables['content']['field_status']);
     } else {
-      if ($status != 3) {
+      if ($status != 3 && $variables['is_admin']) {
         $text = '<i class="icon-4x pull-left icon-border %s"></i>';
         $text .= '<h2>%s</h2>';
         $text .= '<p>%s</p>';
@@ -133,6 +145,12 @@ function generamics_openspace_preprocess_node(&$variables) {
           $items[] = $item;
         }
         $variables['instructions'] = theme('item_list', array('items'=>$items));
+      } else if ($status != 3) {
+        if ($status == 4) {
+          $variables['instructions'] = '<p>'.t('This event has now concluded.').' Go to '.l('the archive', 'node/'.$variables['node']->nid.'/archive').' for more information.</p>';
+        } else {
+          $variables['instructions'] = '<p>'.t('This event isn\'t open yet.').' Go to '.l('My invitations', 'events').' for more information.</p>';
+        }
       } else {
         $path = base_path().path_to_theme().'/js/';
         $dataStr = 'data-%s="%s"';

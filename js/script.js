@@ -186,28 +186,6 @@
     });
 
     /*
-    var jPM = $.jPanelMenu({
-      menu: '#main-menu',
-      trigger: '#main-menu-link',
-      afterOpen: function() {
-        $('#jPanelMenu-menu').css('z-index', 2);
-      },
-      beforeClose: function() {
-        $('#jPanelMenu-menu').css('z-index', '');
-      }
-    });
-    jPM.on();
-
-    $('#jPanelMenu-menu a').each(function() {
-      $(this).click(function() {
-        $('i', this)
-          .removeAttr('class')
-          .addClass('icon-fixed-width icon-spinner icon-spin');
-      });
-    });
-    */
-
-    /*
       Auto updating views
 
       * View only updates if ping returns a result
@@ -222,52 +200,8 @@
       self.updateOnNew(ReplaceViewContent);
     });
 
-    // Hide the messages after 5 seconds
-    // and allow user to bring them back with a thin button
-    /* $('#content .messages').each(function() {
-      var self = $(this);
-      var messageList = $('> ul', self);
-      if (messageList.length == 0 && self.html() != '') {
-        var html = self.html();
-        self.empty();
-        self.append($('<ul>').append($('<li>').append(html)));
-        messageList = $('> ul', self);
-      }
-      var messages = $('> li', messageList);
-      if (messages.length > 0) {
-        var close = $('<span>').addClass('close').html('&blacktriangle; &blacktriangle; &blacktriangle;').get(0).outerHTML;
-        var open = $('<span>').addClass('open').html('&blacktriangledown; &blacktriangledown; &blacktriangledown;').get(0).outerHTML;
-        self
-          .append(
-             $('<a>')
-              .addClass('messages-button')
-              .attr('href', '#')
-              .html(open+close+messages.length + ' message' + (messages.length > 1 ? 's' : '')+close+open)
-              .click(function(e) {
-                e.preventDefault();
-                self.toggleClass('hidden');
-                if (self.hasClass('hidden')) {
-                  messageList.slideUp();
-                } else {
-                  messageList.slideDown();
-                }
-              })
-            );
-        setTimeout(function() {
-          self.addClass('hidden');
-          messageList.slideUp();
-        }, 5000);
-      }
-    }); */
-
     // Setup dataviz on event visualisation pages
     $('#dataviz').each(function() {
-      //osdata
-     //   .init($(this).attr('data-nid'), $(this).attr('data-timestamp'))
-     //   .getData(function() {
-          // Send data to visuals
-          //osvisuals.initData(null, osdata.getD3Array());
-     //   });
       ossunburst.init();
     });
 
@@ -333,7 +267,11 @@
       });
       var partWrapper = $('<ul>').appendTo($('#edit-field-participants > div'));
       var partInput = $('input#edit-field-participants-und').attr('placeholder', 'comma,separated,usernames, noleading,atsign');
-      var participants = partInput.val().split(', ');
+      var val = $.trim(partInput.val());
+      var participants = val.split(', ');
+      if (participants[0] === '') {
+        participants = [];
+      }
       $('#friends ul li.friend').each(function() {
         var self = $(this);
         var username = $('span.p-nickname', self).html().substring(1);

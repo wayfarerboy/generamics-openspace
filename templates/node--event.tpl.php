@@ -115,7 +115,7 @@
 
   <?php else: ?>
 
-  <section class="instructions"><p>This event isn't open yet. Go to <?php print l('My invitations', 'events'); ?> for more information.</p></section>
+  <section class="instructions"><?php print $instructions; ?></section>
 
   <?php endif; ?>
 
