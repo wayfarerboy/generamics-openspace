@@ -79,14 +79,14 @@ stylesheets[all][] = css/print.css
 ; Optionally add some JavaScripts to your theme.
 
 scripts[] = js/d3/d3.min.js
-scripts[] = js/intro.js/intro.min.js
+scripts[] = js/intro.js/minified/intro.min.js
 scripts[] = js/sprintf.js/src/sprintf.min.js
-scripts[] = js/moment/moment.min.js
+scripts[] = js/moment/min/moment.min.js
 scripts[] = js/moment.twitter.js
 scripts[] = js/pietimer/jquery.pietimer.min.js
-scripts[] = js/jss.js
+scripts[] = js/jss.min.js
 scripts[] = js/purl/purl.js
-scripts[] = js/getscreenbbox.js
+scripts[] = js/getscreenbbox.min.js
 ; scripts[] = js/setup.js
 scripts[] = js/sunburst.js
 scripts[] = js/script.js
