@@ -1,4 +1,4 @@
-ossunburst = (function ($, Drupal, window, document, undefined) {
+var ossunburst = (function ($, Drupal, window, document, undefined) {
   
   var ossunburst = {
     w: 0,
@@ -60,7 +60,7 @@ ossunburst = (function ($, Drupal, window, document, undefined) {
       }
 
       // Setup pietimer to update data as and when
-      os.timer.updateOnNew(os.updateData, 10);
+      os.timer.updateOnNew(os.updateData, 60);
 
       // Page resize function (resets visuals)
       $(window).resize(function() {

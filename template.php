@@ -22,7 +22,7 @@ function generamics_openspace_preprocess_html(&$variables) {
     openspace_functions_twitter_account_message();
     drupal_goto('user/'.$user->uid);
   } else {
-    drupal_add_js('http://192.168.1.65:35729/livereload.js');
+    // drupal_add_js('http://192.168.1.65:35729/livereload.js');
     if (module_exists('openspace_functions')) {
       if (drupal_get_title()) {
         if (!$user->uid && !drupal_is_front_page()) {
@@ -82,8 +82,13 @@ function generamics_openspace_preprocess_page(&$variables) {
         }
       }
     }
-    if ($_GET['edit']) {
-      if ($_GET['edit']['field_question_ref']) {
+    if (isset($_GET['edit'])) {
+      if (isset($_GET['edit']['field_question_ref'])) {
+        $qid = $_GET['edit']['field_question_ref'][LANGUAGE_NONE];
+        if ($qid) {
+          $question = node_load($qid);
+          $variables['title'] = 'Submit a post for <em>'.$question->title.'</em>';
+        }
       } else {
         $eid = $_GET['edit']['field_event'][LANGUAGE_NONE];
         if ($eid) {
@@ -104,6 +109,9 @@ function generamics_openspace_preprocess_node(&$variables) {
   $variables['data'] = '';
   $variables['is_admin'] = $user->uid == $variables['node']->uid || in_array('superuser', $user->roles) || $user->uid == 1;
   if ($variables['node']->type == 'event') {
+    if (!$user->uid) {
+      drupal_access_denied();
+    }
     $nid = $variables['node']->nid;
     $status = openspace_functions_get_event_status($nid);
     $terms = array();

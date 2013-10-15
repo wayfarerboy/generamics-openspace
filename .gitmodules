@@ -4,9 +4,6 @@
 [submodule "js/intro.js"]
 	path = js/intro.js
 	url = git@github.com:usablica/intro.js.git
-[submodule "js/jss.js"]
-	path = js/jss.js
-	url = git@github.com:Box9/jss.git
 [submodule "js/moment"]
 	path = js/moment
 	url = git@github.com:moment/moment.git
