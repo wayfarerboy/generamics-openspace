@@ -79,7 +79,10 @@ html.js input.form-autocomplete {
   @include sassy-button();
   @include sassy-button-gradient('simple', gray);
   font-size: 1em;
-  margin: 0.5em;
+}
+#edit-cancel,
+#edit-field-logo-und-0-upload-button {
+  margin: 0.2em;
 }
 
 .form-submit { /* The submit button */

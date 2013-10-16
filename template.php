@@ -169,14 +169,12 @@ function generamics_openspace_preprocess_node(&$variables) {
         if (count($dur) > 0) {
           $duration = $dur[0]['value'];
         }
-
         $logoIDs = field_get_items('node', $variables['node'], 'field_logo');
         if (count($logoIDs) == 0) {
           $author = user_load($variables['node']->uid);
           $logoIDs = field_get_items('user', $author, 'field_logo');
         }
         $variables['logo'] = theme('image_style', array('style_name'=>'profile', 'path'=>$logoIDs[0]['uri']));
-
         $data[] = sprintf($dataStr, 'eid', $variables['node']->nid);
         $data[] = sprintf($dataStr, 'url-posts', url('events/'.$variables['node']->nid.'/json/posts', array('absolute'=>true)));
         $data[] = sprintf($dataStr, 'url-questions', url('events/'.$variables['node']->nid.'/json/questions', array('absolute'=>true)));
@@ -235,10 +233,13 @@ function generamics_openspace_preprocess_block(&$variables) {
     'block-views-8daa96694e7829aa36e2862be4d41eb1' => 'friends',
     'block-views-5b9dd9b2a238a37c4c9a5b4f09e95fd7' => 'questions',
     'block-views-question-sequence-hashtags' => 'hashtags',
+    'block-views-12998e0b963bfb66b78aaa9f56a185ff' => 'my-events',
   );
   
   if (isset($ids[$variables['block_html_id']])) {
     $variables['block_html_id'] = $ids[$variables['block_html_id']];
+  } else {
+    dpm($variables);
   }
 }
 
