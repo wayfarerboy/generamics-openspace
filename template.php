@@ -234,12 +234,11 @@ function generamics_openspace_preprocess_block(&$variables) {
     'block-views-5b9dd9b2a238a37c4c9a5b4f09e95fd7' => 'questions',
     'block-views-question-sequence-hashtags' => 'hashtags',
     'block-views-12998e0b963bfb66b78aaa9f56a185ff' => 'my-events',
+    'block-block-4' => 'loggedin',
   );
   
   if (isset($ids[$variables['block_html_id']])) {
     $variables['block_html_id'] = $ids[$variables['block_html_id']];
-  } else {
-    dpm($variables);
   }
 }
 
