@@ -374,6 +374,23 @@
         });
       });
     });
+
+    $('body.page-events').each(function() {
+      var intro = introJs();
+      var steps = [];
+      $('#my-events').each(function() {
+        steps.push({
+          element: this,
+          intro: 'This is a list of all events created by you, most recent events are at the top.'
+        });
+        $(this).click(function() {
+          intro.start(this);
+        });
+      });
+
+      intro.setOptions({ steps: steps });
+    });
+
   });
 
   /*
