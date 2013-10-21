@@ -253,7 +253,7 @@ function generamics_openspace_preprocess_user_login(&$variables) {
   $variables['form'] = drupal_render_children($variables['form']);
 }
 
-function generamics_openspace_preprocess_user_profile(&$variables) {
+/* function generamics_openspace_preprocess_user_profile(&$variables) {
   global $user;
   if ($user->uid == 1 || in_array('organiser', $user->roles) || count($user->twitter_accounts) == 0) {
     if (count($user->twitter_accounts) == 0) {
@@ -267,7 +267,7 @@ function generamics_openspace_preprocess_user_profile(&$variables) {
   } else {
     drupal_goto('events');
   }
-}
+} */
 
 function generamics_openspace_preprocess_views_view(&$variables) {
   $filterCheck = array('invitations');

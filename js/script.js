@@ -300,13 +300,14 @@
     });
 
     $('body.page-node-add-post').each(function() {
+      var url = $.url();
       $('#edit-field-body-und-0-format--2')
         .children('option:selected')
         .removeAttr('selected')
         .end()
         .children('option[value="tweet_with_preview_"]')
         .attr('selected', 'selected');
-      if ($.url().param('conclusion') === 1) {
+      if (url.param('conclusion')) {
         $('#edit-flag-conclusion').attr('checked', 'checked');
       }
     });
@@ -328,7 +329,7 @@
       }
     });
 
-    $('.page-user').each(function() {
+    /* $('.page-user').each(function() {
       $('#profile', this).each(function() {
         var self = $(this);
         var form = $('<div>').addClass('twitter-login').hide();
@@ -373,7 +374,7 @@
           }
         });
       });
-    });
+    }); */
 
     $('body.page-events').each(function() {
       var intro = introJs();
@@ -381,13 +382,20 @@
       $('#my-events').each(function() {
         steps.push({
           element: this,
-          intro: 'This is a list of all events created by you, most recent events are at the top.'
+          intro: 'This is a list of all events created by you, with most recent events at the top.'
         });
-        $(this).click(function() {
-          intro.start(this);
-        });
+        var self = this;
+        $('h2', this)
+          .eq(0)
+          .append(' ')
+          .append(
+            $('<i>')
+            .addClass('icon-question-sign')
+            .click(function() {
+              intro.start(self);
+            })
+          );
       });
-
       intro.setOptions({ steps: steps });
     });
 

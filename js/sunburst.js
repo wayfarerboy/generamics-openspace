@@ -818,21 +818,23 @@ var ossunburst = (function ($, Drupal, window, document, undefined) {
               }
             }
           } else {
-            hashtag.addClass('shake');
-            var intro = introJs();
-            intro.setOptions({
-              steps: [{
-                element: wrapper[0],
-                intro: 'Nothing has been posted yet. Why not start the discussion?',
-                position: 'right'
-              }],
-              showStepNumbers: false,
-              skipLabel: 'OK'
-            });
-            setTimeout(function() {
-              hashtag.removeClass('shake');
-              intro.start();
-            }, 550);
+            if ($('body > .introjs-helperLayer').length === 0) {
+              hashtag.addClass('shake');
+              var intro = introJs();
+              intro.setOptions({
+                steps: [{
+                  element: wrapper[0],
+                  intro: 'Nothing has been posted yet. Why not start the discussion?',
+                  position: 'right'
+                }],
+                showStepNumbers: false,
+                skipLabel: 'OK'
+              });
+              setTimeout(function() {
+                hashtag.removeClass('shake');
+                intro.start();
+              }, 550);
+            }
           }
         }
       });
