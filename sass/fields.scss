@@ -121,12 +121,12 @@
     font-weight: bold;
     color: lighten(black, 40%);
   }
-  figure.user-picture {
+  img {
     @include reset-float;
     display: inline;
     margin: 0;
+    width: 16px;
   }
-  img { width: 16px; }
 }
 
 .jquery_colorpicker_color_display, img.swatch {

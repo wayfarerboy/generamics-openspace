@@ -8538,14 +8538,11 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
   color: #666666;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003124}}
-.profile figure.user-picture {
+.profile img {
   float: none;
   display: block;
   display: inline;
   margin: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003129}}
-.profile img {
   width: 16px;
 }
 
