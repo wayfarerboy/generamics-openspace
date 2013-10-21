@@ -8544,9 +8544,11 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
   display: inline;
   margin: 0;
   width: 16px;
+  position: relative;
+  bottom: -0.1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003134}}
 .jquery_colorpicker_color_display, img.swatch {
   display: inline-block;
   position: relative;
@@ -8558,25 +8560,25 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
   border-radius: 0.2em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003141}}
 .jquery_colorpicker_color_display {
   margin-right: 0.3em;
   width: 1.4em;
   height: 1.4em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003147}}
 img.swatch {
   bottom: -0.35em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003152}}
 p.submitted img.swatch {
   position: relative;
   bottom: -0.2em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003159}}
 span.event, span.question {
   white-space: nowrap;
   padding: 0.3em 0.4em 0.3em 0.2em;
@@ -8587,26 +8589,26 @@ span.event, span.question {
   -o-border-radius: 0.2em;
   border-radius: 0.2em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003164}}
 span.event a, span.question a {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003163}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003165}}
 span.event:hover, span.question:hover {
   background: #333333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003165}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003167}}
 span.event:hover a, span.question:hover a {
   color: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003171}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003173}}
 blockquote.post a {
   text-decoration: none;
   color: #4d4d4d;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003178}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003180}}
 p.actions a {
   font-size: 16px;
   padding: 0.3em 1.5em;
@@ -8665,7 +8667,7 @@ p.actions a::-moz-focus-inner {
   padding: 0 !important;
   margin: -1px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/fields\.scss}line{font-family:\00003186}}
 p.actions .flag-add-participants a,
 p.actions .flag-auto-post a {
   font-size: 16px;
