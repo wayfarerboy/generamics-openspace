@@ -180,9 +180,6 @@ $break-medium: 640px;
   .views-table { width: 100%; }
 }
 
-.view-invitations {
-}
-
 .ui-icon.ui-icon-empty { background:none }
 
 #time-display {
@@ -267,7 +264,6 @@ section.actions {
   font-size: 1.2em;
   p a { @include sassy-button; }
 }
-.view-display-id-invitations_admin .view-footer { display: none; }
 .view-display-id-my_events {
   ul {
     @include no-bullets;
