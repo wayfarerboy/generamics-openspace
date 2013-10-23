@@ -271,14 +271,14 @@ a.fieldset-title { color: lighten(black, 50%); }
   }
 }
 
-form.node-event-form {
+form#node-event-form {
   .form-item-title,
   #edit-field-logo,
   #edit-field-max-concurrent-spaces,
   #edit-field-post-limit-per-question,
   #edit-field-max-conclusion-posts,
   #edit-field-max-question-duration,
-  #edit-field-participants {
+  #edit-field-participant-users {
     display: inline-block;
     margin: 1em 3em 1em 0;
     padding-right: 1em;
