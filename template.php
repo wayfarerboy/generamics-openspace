@@ -65,14 +65,15 @@ function generamics_openspace_preprocess_page(&$variables) {
       }
     }
     // Tab Tamer
-    $unwanted_tabs = array('user/%/hybridauth', 'user/%/edit/twitter');
-    foreach ($variables['tabs'] as $group_key => $tab_group) {
-      if (is_array($tab_group)) {
-        foreach ($tab_group as $key => $tab) {
-          if (isset($tab['#link']['path']) && in_array($tab['#link']['path'], $unwanted_tabs)){
-            unset($variables['tabs'][$group_key][$key]);
-          } else if ($tab['#link']['title'] == 'View' && $node != NULL && $node->type == 'event') {
-            $variables['tabs'][$group_key][$key]['#link']['title'] = 'Overview';
+    if ($node != NULL && $node->type == 'event') {
+      foreach ($variables['tabs'] as $group_key => $tab_group) {
+        if (is_array($tab_group)) {
+          foreach ($tab_group as $key => $tab) {
+            if ($tab['#link']['title'] == 'View') {
+              $variables['tabs'][$group_key][$key]['#link']['title'] = 'Overview';
+            } else if ($tab['#link']['title'] == 'Edit') {
+              $variables['tabs'][$group_key][$key]['#link']['localized_options']['query'] = array('destination'=>$_GET['q']);
+            } 
           }
         }
       }
