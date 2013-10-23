@@ -9120,197 +9120,187 @@ a.fieldset-title {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003281}}
-form.node-event-form .form-item-title,
-form.node-event-form #edit-field-logo,
-form.node-event-form #edit-field-max-concurrent-spaces,
-form.node-event-form #edit-field-post-limit-per-question,
-form.node-event-form #edit-field-max-conclusion-posts,
-form.node-event-form #edit-field-max-question-duration,
-form.node-event-form #edit-field-participants {
+form#node-event-form .form-item-title,
+form#node-event-form #edit-field-logo,
+form#node-event-form #edit-field-max-concurrent-spaces,
+form#node-event-form #edit-field-post-limit-per-question,
+form#node-event-form #edit-field-max-conclusion-posts,
+form#node-event-form #edit-field-max-question-duration,
+form#node-event-form #edit-field-participant-users {
   display: inline-block;
   margin: 1em 3em 1em 0;
   padding-right: 1em;
   vertical-align: top;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003286}}
-form.node-event-form .form-item-title .form-item,
-form.node-event-form #edit-field-logo .form-item,
-form.node-event-form #edit-field-max-concurrent-spaces .form-item,
-form.node-event-form #edit-field-post-limit-per-question .form-item,
-form.node-event-form #edit-field-max-conclusion-posts .form-item,
-form.node-event-form #edit-field-max-question-duration .form-item,
-form.node-event-form #edit-field-participants .form-item {
+form#node-event-form .form-item-title .form-item,
+form#node-event-form #edit-field-logo .form-item,
+form#node-event-form #edit-field-max-concurrent-spaces .form-item,
+form#node-event-form #edit-field-post-limit-per-question .form-item,
+form#node-event-form #edit-field-max-conclusion-posts .form-item,
+form#node-event-form #edit-field-max-question-duration .form-item,
+form#node-event-form #edit-field-participant-users .form-item {
   margin: 0;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003287}}
-form.node-event-form .form-item-title .form-submit,
-form.node-event-form #edit-field-logo .form-submit,
-form.node-event-form #edit-field-max-concurrent-spaces .form-submit,
-form.node-event-form #edit-field-post-limit-per-question .form-submit,
-form.node-event-form #edit-field-max-conclusion-posts .form-submit,
-form.node-event-form #edit-field-max-question-duration .form-submit,
-form.node-event-form #edit-field-participants .form-submit {
+form#node-event-form .form-item-title .form-submit,
+form#node-event-form #edit-field-logo .form-submit,
+form#node-event-form #edit-field-max-concurrent-spaces .form-submit,
+form#node-event-form #edit-field-post-limit-per-question .form-submit,
+form#node-event-form #edit-field-max-conclusion-posts .form-submit,
+form#node-event-form #edit-field-max-question-duration .form-submit,
+form#node-event-form #edit-field-participant-users .form-submit {
   font-size: 0.9em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003288}}
-form.node-event-form .form-item-title input,
-form.node-event-form #edit-field-logo input,
-form.node-event-form #edit-field-max-concurrent-spaces input,
-form.node-event-form #edit-field-post-limit-per-question input,
-form.node-event-form #edit-field-max-conclusion-posts input,
-form.node-event-form #edit-field-max-question-duration input,
-form.node-event-form #edit-field-participants input {
+form#node-event-form .form-item-title input,
+form#node-event-form #edit-field-logo input,
+form#node-event-form #edit-field-max-concurrent-spaces input,
+form#node-event-form #edit-field-post-limit-per-question input,
+form#node-event-form #edit-field-max-conclusion-posts input,
+form#node-event-form #edit-field-max-question-duration input,
+form#node-event-form #edit-field-participant-users input {
   max-width: 100%;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003289}}
-form.node-event-form .form-item-title label,
-form.node-event-form #edit-field-logo label,
-form.node-event-form #edit-field-max-concurrent-spaces label,
-form.node-event-form #edit-field-post-limit-per-question label,
-form.node-event-form #edit-field-max-conclusion-posts label,
-form.node-event-form #edit-field-max-question-duration label,
-form.node-event-form #edit-field-participants label {
+form#node-event-form .form-item-title label,
+form#node-event-form #edit-field-logo label,
+form#node-event-form #edit-field-max-concurrent-spaces label,
+form#node-event-form #edit-field-post-limit-per-question label,
+form#node-event-form #edit-field-max-conclusion-posts label,
+form#node-event-form #edit-field-max-question-duration label,
+form#node-event-form #edit-field-participant-users label {
   white-space: nowrap;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003291}}
-form.node-event-form .form-item-title label i,
-form.node-event-form #edit-field-logo label i,
-form.node-event-form #edit-field-max-concurrent-spaces label i,
-form.node-event-form #edit-field-post-limit-per-question label i,
-form.node-event-form #edit-field-max-conclusion-posts label i,
-form.node-event-form #edit-field-max-question-duration label i,
-form.node-event-form #edit-field-participants label i {
+form#node-event-form .form-item-title label i,
+form#node-event-form #edit-field-logo label i,
+form#node-event-form #edit-field-max-concurrent-spaces label i,
+form#node-event-form #edit-field-post-limit-per-question label i,
+form#node-event-form #edit-field-max-conclusion-posts label i,
+form#node-event-form #edit-field-max-question-duration label i,
+form#node-event-form #edit-field-participant-users label i {
   margin-left: 0.3em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003294}}
-form.node-event-form .form-item-title {
+form#node-event-form .form-item-title {
   width: 24em;
   margin-top: 1em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003295}}
-form.node-event-form .form-item-title input {
+form#node-event-form .form-item-title input {
   font-size: 1.2em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003298}}
-form.node-event-form .form-item-title #edit-title {
+form#node-event-form .form-item-title #edit-title {
   width: 20em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003301}}
-form.node-event-form #edit-field-body .form-type-textarea {
+form#node-event-form #edit-field-body .form-type-textarea {
   margin-top: 0.5em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003302}}
-form.node-event-form #edit-field-body .filter-wrapper {
+form#node-event-form #edit-field-body .filter-wrapper {
   margin-bottom: 0.5em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003304}}
-form.node-event-form #edit-field-logo {
+form#node-event-form #edit-field-logo {
   width: 25em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003305}}
-form.node-event-form #edit-field-max-concurrent-spaces {
+form#node-event-form #edit-field-max-concurrent-spaces {
   width: 6em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003306}}
-form.node-event-form #edit-field-post-limit-per-question {
+form#node-event-form #edit-field-post-limit-per-question {
   width: 6em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003309}}
-form.node-event-form #edit-field-max-conclusion-posts {
+form#node-event-form #edit-field-max-conclusion-posts {
   width: 7em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003315}}
-form.node-event-form #edit-field-max-concurrent-spaces input,
-form.node-event-form #edit-field-post-limit-per-question input,
-form.node-event-form #edit-field-max-conclusion-posts input {
+form#node-event-form #edit-field-max-concurrent-spaces input,
+form#node-event-form #edit-field-post-limit-per-question input,
+form#node-event-form #edit-field-max-conclusion-posts input {
   font-size: 1.1em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003317}}
-form.node-event-form #edit-field-max-question-duration {
+form#node-event-form #edit-field-max-question-duration {
   width: 15em;
   margin-right: 2em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003320}}
-form.node-event-form #edit-field-max-question-duration .timeperiod-element {
+form#node-event-form #edit-field-max-question-duration .timeperiod-element {
   white-space: nowrap;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003322}}
-form.node-event-form #edit-field-max-question-duration .timeperiod-element select {
+form#node-event-form #edit-field-max-question-duration .timeperiod-element select {
   width: auto;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003324}}
-form.node-event-form #edit-field-max-question-duration .field-suffix {
+form#node-event-form #edit-field-max-question-duration .field-suffix {
   color: transparent;
   display: inline-block;
   width: 1em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003328}}
-form.node-event-form #edit-field-max-question-duration .field-suffix:first-letter {
+form#node-event-form #edit-field-max-question-duration .field-suffix:first-letter {
   color: gray;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003331}}
-form.node-event-form #edit-field-participants {
-  font-size: 1.2em;
-  display: block;
+form#node-event-form #edit-field-participant-users {
   margin-bottom: 3em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003334}}
-form.node-event-form #edit-field-participants .form-submit {
-  font-size: 0.9em;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003333}}
+form#node-event-form #edit-field-participant-users input.form-text {
+  margin-right: 6em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003335}}
-form.node-event-form #edit-field-participants .form-text {
-  width: 67%;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003337}}
-form.node-event-form #edit-field-participants ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-top: 1em;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/lists\/_bullets\.scss}line{font-family:\0000311}}
-form.node-event-form #edit-field-participants ul li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003344}}
-form.node-event-form #edit-field-status {
+form#node-event-form #edit-field-status {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003345}}
-form.node-event-form div.vertical-tabs {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003336}}
+form#node-event-form div.vertical-tabs {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003337}}
+form#node-event-form div.tabledrag-toggle-weight-wrapper {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003341}}
 form#question-node-form .form-wrapper, form#question-node-form .vertical-tabs {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003342}}
 form#question-node-form #edit-actions {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003343}}
 form#question-node-form .form-item-title #edit-title {
   width: 95%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003347}}
 form#post-node-form .form-wrapper, form#post-node-form .vertical-tabs {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003348}}
 form#post-node-form #edit-actions {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003349}}
 form#post-node-form #edit-field-body {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003350}}
 form#post-node-form #edit-field-body-und-0-format {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003354}}
+body.page-node-add-event #edit-field-participant-users {
   display: none;
 }
 
