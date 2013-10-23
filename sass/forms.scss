@@ -328,21 +328,13 @@ form.node-event-form {
       &:first-letter { color: lighten(black, 50%); }
     }
   }
-  #edit-field-participants {
-    font-size: 1.2em;
-    display: block;
-    .form-submit { font-size: 0.9em; }
-    .form-text { width: 67%; }
+  #edit-field-participant-users {
     margin-bottom: 3em;
-    ul {
-      @include no-bullets;
-      padding: 0;
-      margin: 0;
-      margin-top: 1em;
-    }
+    input.form-text { margin-right: 6em; }
   }
   #edit-field-status { display: none; }
   div.vertical-tabs { display: none; }
+  div.tabledrag-toggle-weight-wrapper { display: none; }
 }
 
 form#question-node-form {
@@ -356,6 +348,12 @@ form#post-node-form {
   #edit-actions { display: block; }
   #edit-field-body { display: block; }
   #edit-field-body-und-0-format { display: none; }
+}
+
+body.page-node-add-event {
+  #edit-field-participant-users {
+    display: none;
+  }
 }
 
 @include form-skin-natural;
