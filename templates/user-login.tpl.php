@@ -1,9 +1,4 @@
 <section>
-  <a href="/twitter/redirect" class="twitter">
-    <i class="icon-twitter"></i> Log in with Twitter
-  </a>
-  <span class="or-separator"> or </span>
-  <hr class="separator"></hr>
   <?php print $username; ?>
   <div class="password">
     <?php print $password; ?>

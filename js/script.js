@@ -242,7 +242,7 @@
 
     $('input[size]').removeAttr('size');
 
-    $('form.node-event-form').each(function() {
+    $('form.node-event-form,form.node-user_import-form').each(function() {
       $('div.description', this).each(function(i) {
         var desc = $(this);
         var wrapper = desc.parents('div.form-wrapper');

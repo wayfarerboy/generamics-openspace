@@ -14,13 +14,8 @@ function generamics_openspace_theme() {
 function generamics_openspace_preprocess_html(&$variables) {
   global $user;
   $user = user_load($user->uid);
-  if ($user->uid != 1 && arg(0) == 'user' && arg(2) == 'edit' && arg(3) == 'twitter' && !isset($_GET['override'])) {
-    drupal_goto('user/'.arg(1));
-  } else if ($user->uid && count($user->twitter_accounts) > 0 && drupal_is_front_page()) {
+  if ($user->uid && drupal_is_front_page()) {
     drupal_goto('events');
-  } else if ($user->uid && arg(0) !== 'user' && count($user->twitter_accounts) == 0) {
-    openspace_functions_twitter_account_message();
-    drupal_goto('user/'.$user->uid);
   } else {
     // drupal_add_js('http://192.168.1.65:35729/livereload.js');
     if (module_exists('openspace_functions')) {
@@ -93,7 +88,12 @@ function generamics_openspace_preprocess_page(&$variables) {
         $eid = $_GET['edit']['field_event'][LANGUAGE_NONE];
         if ($eid) {
           $event = node_load($eid);
-          $variables['title'] = 'Submit a question for <em>'.$event->title.'</em>';
+          if (arg(2) == 'question') {
+            $variables['title'] = 'Submit a question for ';
+          } else {
+            $variables['title'] = 'Invite participants for ';
+          }
+          $variables['title'] .= '<em>'.$event->title.'</em>';
         }
       }
     }
@@ -191,7 +191,7 @@ function generamics_openspace_preprocess_node(&$variables) {
   }
 }
 
-function generamics_openspace_preprocess_taxonomy_term(&$variables) {
+/* function generamics_openspace_preprocess_taxonomy_term(&$variables) {
   $term = $variables['term'];
   if ($term->vid == 5) {
     $variables['twitter'] = '';
@@ -222,7 +222,7 @@ function generamics_openspace_preprocess_taxonomy_term(&$variables) {
       }
     }
   }
-}
+} */
 
 function generamics_openspace_preprocess_block(&$variables) {
   $ids = array(
@@ -253,21 +253,40 @@ function generamics_openspace_preprocess_user_login(&$variables) {
   $variables['form'] = drupal_render_children($variables['form']);
 }
 
-/* function generamics_openspace_preprocess_user_profile(&$variables) {
-  global $user;
-  if ($user->uid == 1 || in_array('organiser', $user->roles) || count($user->twitter_accounts) == 0) {
-    if (count($user->twitter_accounts) == 0) {
-      openspace_functions_twitter_account_message();
+function generamics_openspace_preprocess_user_profile(&$variables) {
+  $variables['class'] = '';
+  $user = $variables['elements']['#account'];
+  $variables['page'] = true;
+  $profiles = array('large_profile', 'compact_profile', 'small_picture');
+  $classes = array('profile-large', 'profile-compact', 'profile-small');
+  $view = $variables['elements']['#view_mode'];
+  if (in_array($view, $profiles)) {
+    $variables['page'] = false;
+    $variables['name'] = $user->name;
+    $variables['picture'] = drupal_render($variables['user_profile']['user_picture']);
+    $variables['class'] = $classes[array_search($view, $profiles)];
+    if ($view == 'small_picture') {
+      $variables['name'] = '';
     }
-    if (isset($variables['user_profile']['twitter'])) {
-      $variables['data'] = '<div id="profile" class="loading has-account" data-url="'.url('user/'.$variables['user']->uid.'/edit/twitter', array('query'=>array('override'=>1))).' form#twitter-account-list-form"></div>';
-    } else {
-      $variables['data'] = '<div id="profile" class="loading no-account" data-url="'.url('user/'.$variables['user']->uid.'/edit/twitter', array('query'=>array('override'=>1))).' form#twitter-auth-account-form"></div>';
-    }
-  } else {
-    drupal_goto('events');
   }
-} */
+}
+
+function generamics_openspace_preprocess_user_picture(&$variables) {
+  if (module_exists('userpickit')) {
+    $variables['user_picture'] = '';
+    // $variables['account'] is not really the user account, it could be a user,
+    // node, or comment object. Rely on $account->uid/name/picture only.
+    // @see template_preprocess_user_picture()
+    $account = _userpickit_load_account($variables['account']);
+
+    $uri = userpickit_picture_uri(NULL, $account);
+    if (!$uri) {
+      return;
+    }
+    // Create the picture
+    $variables['user_picture'] = userpickit_render_picture($account, $uri);
+  }
+}
 
 function generamics_openspace_preprocess_views_view(&$variables) {
   $filterCheck = array('invitations');
