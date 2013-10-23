@@ -17,7 +17,7 @@ function generamics_openspace_preprocess_html(&$variables) {
   if ($user->uid && drupal_is_front_page()) {
     drupal_goto('events');
   } else {
-    // drupal_add_js('http://192.168.1.65:35729/livereload.js');
+    drupal_add_js('http://192.168.1.65:35729/livereload.js');
     if (module_exists('openspace_functions')) {
       if (drupal_get_title()) {
         if (!$user->uid && !drupal_is_front_page()) {
@@ -35,6 +35,11 @@ function generamics_openspace_preprocess_html(&$variables) {
       }
       $variables['head_title_array'] = $head_title;
       $variables['head_title'] = implode(' | ', $head_title);
+      if (arg(2) == 'edit') {
+        if (in_array('organiser', $user->roles) || in_array('superuser', $user->roles)) {
+          $variables['classes_array'][] = 'is-admin';
+        }
+      }
     }
   }
 }
@@ -99,9 +104,9 @@ function generamics_openspace_preprocess_page(&$variables) {
       }
     }
   } else {
-    /*if (!drupal_is_front_page()) {
+    if (!drupal_is_front_page() && arg(0) == 'user' && !arg(1)) {
       $variables['title'] = 'Log in';
-    }*/
+    }
   }
 }
 
@@ -236,6 +241,7 @@ function generamics_openspace_preprocess_block(&$variables) {
     'block-views-question-sequence-hashtags' => 'hashtags',
     'block-views-12998e0b963bfb66b78aaa9f56a185ff' => 'my-events',
     'block-block-4' => 'loggedin',
+    'block-block-6' => 'user-welcome',
   );
   
   if (isset($ids[$variables['block_html_id']])) {

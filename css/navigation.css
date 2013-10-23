@@ -8562,251 +8562,16 @@ li a.active {
  * these limitations, see http://drupal.org/project/menu_block
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003119}}
-#jPanelMenu-menu {
-  background: gray;
-  z-index: 2;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003122}}
-#jPanelMenu-menu ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/lists\/_bullets\.scss}line{font-family:\0000311}}
-#jPanelMenu-menu ul li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003126}}
-#jPanelMenu-menu ul li {
-  margin-bottom: 1em;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003127}}
-#jPanelMenu-menu ul a {
-  font-size: 1.4em;
+#user-welcome a.calltoaction {
+  font-size: 16px;
   padding: 0.3em 1.5em;
   display: inline-block;
   cursor: pointer;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF808080', endColorstr='#FF4D4D4D');
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #808080), color-stop(100%, #676767));
-  background: -webkit-linear-gradient(#808080, #676767);
-  background: -moz-linear-gradient(#808080, #676767);
-  background: -o-linear-gradient(#808080, #676767);
-  background: linear-gradient(#808080, #676767);
-  -webkit-box-shadow: #a6a6a6 0 1px 0 inset;
-  -moz-box-shadow: #a6a6a6 0 1px 0 inset;
-  box-shadow: #a6a6a6 0 1px 0 inset;
-  border: 1px solid #5a5a5a;
-  color: white;
-  text-shadow: #3e3e3e 0 -1px 0;
-  width: 100%;
-  padding: 0.5em;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000315}}
-#jPanelMenu-menu ul a:hover {
-  text-decoration: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000336}}
-#jPanelMenu-menu ul a:hover {
-  background-color: #5a5a5a;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #737373), color-stop(100%, #5a5a5a));
-  background: -webkit-linear-gradient(#737373, #5a5a5a);
-  background: -moz-linear-gradient(#737373, #5a5a5a);
-  background: -o-linear-gradient(#737373, #5a5a5a);
-  background: linear-gradient(#737373, #5a5a5a);
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000339}}
-#jPanelMenu-menu ul a:active {
-  -webkit-box-shadow: #525252 0 1px 2px inset;
-  -moz-box-shadow: #525252 0 1px 2px inset;
-  box-shadow: #525252 0 1px 2px inset;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\000036}}
-#jPanelMenu-menu ul a.disabled, #jPanelMenu-menu ul a[disabled] {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-  opacity: 0.6;
-  background: #676767;
-  cursor: default;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/_sassy-buttons\.sass}line{font-family:\0000374}}
-#jPanelMenu-menu ul a::-moz-focus-inner {
-  padding: 0 !important;
-  margin: -1px !important;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003131}}
-#jPanelMenu-menu ul a.active, #jPanelMenu-menu ul a.active:hover, #jPanelMenu-menu ul a.active:focus {
-  background: black;
-  cursor: default;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003137}}
-#jPanelMenu-menu ul ul li {
-  margin-bottom: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003138}}
-#jPanelMenu-menu ul ul a {
-  white-space: nowrap;
-  overflow: hidden;
-  -ms-text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  font-size: 1em;
-  padding: 0.3em 1.5em;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFA9A9A9', endColorstr='#FF767676');
-  background-color: darkgrey;
-  border: 0;
-  color: white;
-  text-shadow: dimgrey 0 -1px 0;
-  padding-left: 2.5em;
-  padding-right: 1.5em;
-  max-width: 17em;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000315}}
-#jPanelMenu-menu ul ul a:hover {
-  text-decoration: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000342}}
-#jPanelMenu-menu ul ul a:hover {
-  background-color: #9c9c9c;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000344}}
-#jPanelMenu-menu ul ul a:active {
-  background-color: #959595;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\000036}}
-#jPanelMenu-menu ul ul a.disabled, #jPanelMenu-menu ul ul a[disabled] {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-  opacity: 0.6;
-  background: false;
-  cursor: default;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/_sassy-buttons\.sass}line{font-family:\0000374}}
-#jPanelMenu-menu ul ul a::-moz-focus-inner {
-  padding: 0 !important;
-  margin: -1px !important;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003146}}
-#jPanelMenu-menu ul h3 {
-  text-transform: uppercase;
-  font-size: 0.9em;
-  color: #b3b3b3;
-  margin: 0.2em 0 0 1.2em;
-  display: block;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003152}}
-#jPanelMenu-menu ul h3 i {
-  display: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003157}}
-nav.btn-group {
-  padding: 0.4em 0.5em;
-  background: rgba(255, 255, 255, 0.2);
-  display: inline-block;
-  font-size: 1.4em;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003162}}
-nav.btn-group a {
-  font-size: 1em;
-  padding: 0.3em 1.5em;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF808080', endColorstr='#FF4D4D4D');
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #808080), color-stop(100%, #676767));
-  background: -webkit-linear-gradient(#808080, #676767);
-  background: -moz-linear-gradient(#808080, #676767);
-  background: -o-linear-gradient(#808080, #676767);
-  background: linear-gradient(#808080, #676767);
-  -webkit-box-shadow: #a6a6a6 0 1px 0 inset;
-  -moz-box-shadow: #a6a6a6 0 1px 0 inset;
-  box-shadow: #a6a6a6 0 1px 0 inset;
-  border: 1px solid #5a5a5a;
-  color: white;
-  text-shadow: #3e3e3e 0 -1px 0;
-  margin: 0 0em;
-  padding-left: 0.7em;
-  padding-right: 0.7em;
-  width: 0.8em;
-  text-align: center;
-  float: left;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000315}}
-nav.btn-group a:hover {
-  text-decoration: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000336}}
-nav.btn-group a:hover {
-  background-color: #5a5a5a;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #737373), color-stop(100%, #5a5a5a));
-  background: -webkit-linear-gradient(#737373, #5a5a5a);
-  background: -moz-linear-gradient(#737373, #5a5a5a);
-  background: -o-linear-gradient(#737373, #5a5a5a);
-  background: linear-gradient(#737373, #5a5a5a);
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000339}}
-nav.btn-group a:active {
-  -webkit-box-shadow: #525252 0 1px 2px inset;
-  -moz-box-shadow: #525252 0 1px 2px inset;
-  box-shadow: #525252 0 1px 2px inset;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\000036}}
-nav.btn-group a.disabled, nav.btn-group a[disabled] {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-  opacity: 0.6;
-  background: #676767;
-  cursor: default;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/_sassy-buttons\.sass}line{font-family:\0000374}}
-nav.btn-group a::-moz-focus-inner {
-  padding: 0 !important;
-  margin: -1px !important;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003164}}
-nav.btn-group a.first {
-  -moz-border-radius-topleft: 5px;
-  -webkit-border-top-left-radius: 5px;
-  border-top-left-radius: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003165}}
-nav.btn-group a.last {
-  -moz-border-radius-topright: 5px;
-  -webkit-border-top-right-radius: 5px;
-  border-top-right-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003172}}
-nav.btn-group a.active {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0B99C2', endColorstr='#FF064D61');
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0b99c2), color-stop(100%, #087392));
   background: -webkit-linear-gradient(#0b99c2, #087392);
@@ -8821,11 +8586,11 @@ nav.btn-group a.active {
   text-shadow: #043645 0 -1px 0;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000315}}
-nav.btn-group a.active:hover {
+#user-welcome a.calltoaction:hover {
   text-decoration: none;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000336}}
-nav.btn-group a.active:hover {
+#user-welcome a.calltoaction:hover {
   background-color: #07607a;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0a86aa), color-stop(100%, #07607a));
   background: -webkit-linear-gradient(#0a86aa, #07607a);
@@ -8834,13 +8599,13 @@ nav.btn-group a.active:hover {
   background: linear-gradient(#0a86aa, #07607a);
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000339}}
-nav.btn-group a.active:active {
+#user-welcome a.calltoaction:active {
   -webkit-box-shadow: #06546b 0 1px 2px inset;
   -moz-box-shadow: #06546b 0 1px 2px inset;
   box-shadow: #06546b 0 1px 2px inset;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\000036}}
-nav.btn-group a.active.disabled, nav.btn-group a.active[disabled] {
+#user-welcome a.calltoaction.disabled, #user-welcome a.calltoaction[disabled] {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
   background: #087392;
@@ -8849,41 +8614,8 @@ nav.btn-group a.active.disabled, nav.btn-group a.active[disabled] {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003178}}
-nav#toolbox {
-  -moz-border-radius-bottomleft: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  width: 11.7em;
-  margin-left: -6.35em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003183}}
-nav#playback {
-  -moz-border-radius-topleft: 5px;
-  -webkit-border-top-left-radius: 5px;
-  border-top-left-radius: 5px;
-  -moz-border-radius-topright: 5px;
-  -webkit-border-top-right-radius: 5px;
-  border-top-right-radius: 5px;
-  width: 14.04em;
-  margin-left: -7.52em;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003187}}
-nav#playback.active-live a {
-  position: relative;
-  z-index: -1;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
-  opacity: 0.2;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/navigation\.scss}line{font-family:\00003192}}
-nav#playback.active-live a.live {
-  color: red;
-  z-index: 0;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/_sassy-buttons\.sass}line{font-family:\0000374}}
+#user-welcome a.calltoaction::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
 }

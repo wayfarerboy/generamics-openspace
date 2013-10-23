@@ -208,6 +208,13 @@ td.menu-disabled {
 a.fieldset-title { color: lighten(black, 50%); }
 .at-term-entry { max-width: 70%; }
 
+table.field-multiple-table {
+  input.form-text { margin-right: 6em; }
+  z-index: 2;
+  .unlimitedfield_remove_button { position: relative; }
+}
+.tabledrag-toggle-weight-wrapper { display: none; }
+
 #flag-confirm {
   #edit-submit {
     font-size: 1.5em;
@@ -264,14 +271,7 @@ a.fieldset-title { color: lighten(black, 50%); }
   }
 }
 
-#hybridauth-user-identity {
-  h3 { margin-bottom: 0; }
-  ul.hybridauth-widget a {
-    @include sassy-button;
-  }
-}
-
-form#node-event-form {
+form#event-node-form {
   .form-item-title,
   #edit-field-logo,
   #edit-field-max-concurrent-spaces,
@@ -303,12 +303,8 @@ form#node-event-form {
   }
   #edit-field-logo { width: 25em; }
   #edit-field-max-concurrent-spaces { width: 6em; }
-  #edit-field-post-limit-per-question {
-    width: 6em;
-  }
-  #edit-field-max-conclusion-posts {
-    width: 7em;
-  }
+  #edit-field-post-limit-per-question { width: 6em; }
+  #edit-field-max-conclusion-posts { width: 7em; }
   #edit-field-max-concurrent-spaces,
   #edit-field-post-limit-per-question,
   #edit-field-max-conclusion-posts {
@@ -329,6 +325,7 @@ form#node-event-form {
     }
   }
   #edit-field-participant-users {
+    display: none;
     margin-bottom: 3em;
     input.form-text { margin-right: 6em; }
   }
@@ -347,7 +344,65 @@ form#post-node-form {
   .form-wrapper, .vertical-tabs { display: none; }
   #edit-actions { display: block; }
   #edit-field-body { display: block; }
-  #edit-field-body-und-0-format { display: none; }
+}
+
+form#user-import-node-form {
+  #edit-field-event { display: none; }
+}
+
+form#user-profile-form {
+  .admin-details { display: none; }
+  #edit-timezone,
+  #edit-picture {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3em;
+    legend { display: none; }
+  }
+  #edit-picture {
+    .form-item-picture-type {
+      label {
+        margin: 0;
+        line-height: 0;
+      }
+      > label {
+        line-height: 1.3;
+        margin-bottom: 0.5em;
+      }
+      .picture-type {
+        position: relative;
+        width: auto;
+        padding: 0.2em;
+        margin: 0.5em;
+        i {
+          display: none;
+          font-size: 1.6em;
+          position: absolute;
+          bottom: 0.2em;
+          right: 0.2em;
+          color: white;
+          @include text-shadow(transparentize(black, 0.2) 0 1px 0.5em);
+        }
+        &:hover,&:focus { background: darken(white, 20%); }
+        &.chosen {
+          background: darken(white, 50%);
+          i { display: block; }
+        }
+      }
+      h3,.picture-type-description {
+        display: none;
+      }
+    }
+  }
+  .form-item-status,
+  .form-item-roles { display: none; }
+}
+
+body.is-admin {
+  form#user-profile-form {
+    .admin-details { display: block; }
+  }
 }
 
 body.page-node-add-event {

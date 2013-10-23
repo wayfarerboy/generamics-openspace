@@ -242,12 +242,16 @@
 
     $('input[size]').removeAttr('size');
 
-    $('form.node-event-form,form.node-user_import-form').each(function() {
+    $('#user-profile-form,form.node-event-form,form.node-user_import-form').each(function() {
       $('div.description', this).each(function(i) {
         var desc = $(this);
         var wrapper = desc.parents('div.form-wrapper');
-        var label = wrapper.find('label').eq(0);
-        wrapper.attr({
+        var label = wrapper.find('label');
+        if (label.length > 1) {
+          wrapper = desc.parents('div.form-item');
+          label = wrapper.find('label').eq(0);
+        }
+        wrapper.eq(0).attr({
           'data-intro': desc.html(),
           'data-step': i+1
         });
@@ -265,35 +269,27 @@
           );
         desc.remove();
       });
-      var partWrapper = $('<ul>').appendTo($('#edit-field-participants > div'));
-      var partInput = $('input#edit-field-participants-und').attr('placeholder', 'comma,separated,usernames, noleading,atsign');
-      var val = $.trim(partInput.val());
-      var participants = val.split(', ');
-      if (participants[0] === '') {
-        participants = [];
-      }
-      $('#friends ul li.friend').each(function() {
-        var self = $(this);
-        var username = $('span.p-nickname', self).html().substring(1);
-        var link = $('<li>').addClass('follower');
-        if (participants.indexOf(username) > -1) {
-          link.addClass('active');
-        }
-        partWrapper.append(link
-          .html(self.html())
-          .prepend($('<i>').addClass('icon-li icon-ok'))
-          .click(function(e) {
-            e.preventDefault();
-            if (participants.indexOf(username) > -1) {
-              participants.splice(participants.indexOf(username), 1);
-            } else {
-              participants.push(username);
-            }
-            partInput.attr('value', participants.join(', '));
-            link.toggleClass('active');
-          })
-        );
-      });
+
+      var pics = $('#edit-picture-type div.picture-type');
+      var icon = $('<i>').addClass('icon-check');
+      pics
+        .append(icon.clone())
+        .each(function() {
+          var self = $(this);
+          var input = $('input', self);
+          if (input.is(':checked')) {
+            self.addClass('chosen');
+          }
+          self.click(function() {
+            pics
+              .removeClass('chosen')
+              .find('input')
+              .removeAttr('checked');
+            self.addClass('chosen');
+            input.attr('checked');
+          });
+        });
+
       if (window.location.hash !== '') {
         $('body').animate({'scrollTop': ($(window.location.hash).offset().top)});
       }

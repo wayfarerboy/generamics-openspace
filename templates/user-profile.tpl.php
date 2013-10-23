@@ -35,9 +35,7 @@
  */
 ?>
 <<?php print $page ? 'div' : 'span'; ?> class="profile <?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if ($page): ?>
-  <?php print render($user_profile); ?>
-  <?php else: ?>
+  <?php if (!$page): ?>
   <?php print $picture; ?>
   <?php if ($name != ''): ?><span class="username"><?php print $name; ?></span><?php endif; ?>
   <?php endif; ?>
