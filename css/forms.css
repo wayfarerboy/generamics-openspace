@@ -9250,17 +9250,30 @@ form#post-node-form #edit-actions {
 form#post-node-form #edit-field-body {
   display: block;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003347}}
+form#post-node-form #conclusion-flag i {
+  font-size: 1.2em;
+  margin-left: 0.2em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003351}}
+form#post-node-form #conclusion-flag i:hover, form#post-node-form #conclusion-flag i:focus {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  cursor: pointer;
+}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003359}}
 form#user-import-node-form #edit-field-event {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003363}}
 form#user-profile-form .admin-details {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003365}}
 form#user-profile-form #edit-timezone,
 form#user-profile-form #edit-picture {
   border: 0;
@@ -9268,29 +9281,29 @@ form#user-profile-form #edit-picture {
   padding: 0;
   margin-bottom: 3em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003370}}
 form#user-profile-form #edit-timezone legend,
 form#user-profile-form #edit-picture legend {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003374}}
 form#user-profile-form #edit-picture .form-item-picture-type label {
   margin: 0;
   line-height: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003378}}
 form#user-profile-form #edit-picture .form-item-picture-type > label {
   line-height: 1.3;
   margin-bottom: 0.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003382}}
 form#user-profile-form #edit-picture .form-item-picture-type .picture-type {
   position: relative;
   width: auto;
   padding: 0.2em;
   margin: 0.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003387}}
 form#user-profile-form #edit-picture .form-item-picture-type .picture-type i {
   display: none;
   font-size: 1.6em;
@@ -9300,34 +9313,34 @@ form#user-profile-form #edit-picture .form-item-picture-type .picture-type i {
   color: white;
   text-shadow: rgba(0, 0, 0, 0.8) 0 1px 0.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003396}}
 form#user-profile-form #edit-picture .form-item-picture-type .picture-type:hover, form#user-profile-form #edit-picture .form-item-picture-type .picture-type:focus {
   background: #cccccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003397}}
 form#user-profile-form #edit-picture .form-item-picture-type .picture-type.chosen {
   background: gray;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003399}}
 form#user-profile-form #edit-picture .form-item-picture-type .picture-type.chosen i {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003402}}
 form#user-profile-form #edit-picture .form-item-picture-type h3, form#user-profile-form #edit-picture .form-item-picture-type .picture-type-description {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003408}}
 form#user-profile-form .form-item-status,
 form#user-profile-form .form-item-roles {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003404}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003413}}
 body.is-admin form#user-profile-form .admin-details {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003409}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alpagan\/Websites\/lamp\/drupal-7\/sites\/all\/themes\/generamics-openspace\/sass\/forms\.scss}line{font-family:\00003418}}
 body.page-node-add-event #edit-field-participant-users {
   display: none;
 }

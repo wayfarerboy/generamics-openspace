@@ -566,7 +566,7 @@ var ossunburst = (function ($, Drupal, window, document, undefined) {
             .each(function() {
               var uid = os.timer.attr('data-uid');
               var host = data.get(k).author;
-              if (uid !== host) {
+              if (uid !== host && !$('body').hasClass('is-admin')) {
                 $(this).addClass('inactive');
               }
             });
@@ -877,25 +877,27 @@ var ossunburst = (function ($, Drupal, window, document, undefined) {
           .style('stroke', function(d) { return d.depth === selected.depth ? 'transparent' : 'white'; })
           .attrTween('d', os.arcTween(selected))
           .each('end', function(d) {
-            if (d.depth < 2 + selected.depth && d.depth >= selected.depth) {
-              if (d.depth === 0 || d.key === selected.key || d.parent.key === selected.key) {
-                var details = os.getTypeAndId(d.key);
-                var c = os.arc.centroid(d);
-                var ele = '#'+details.type+'s li.'+details.type+'-'+details.id;
-                if (details.type !== 'event') {
-                  if (details.type === 'question' && d.key === selected.key) {
-                    $(ele).css({ left: '', top: '' });
-                  } else {
-                    $(ele).css({ left: c[0], top: c[1] });
+            setTimeout(function() {
+              if (d.depth < 2 + selected.depth && d.depth >= selected.depth) {
+                if (d.depth === 0 || d.key === selected.key || d.parent.key === selected.key) {
+                  var details = os.getTypeAndId(d.key);
+                  var c = os.arc.centroid(d);
+                  var ele = '#'+details.type+'s li.'+details.type+'-'+details.id;
+                  if (details.type !== 'event') {
+                    if (details.type === 'question' && d.key === selected.key) {
+                      $(ele).css({ left: '', top: '' });
+                    } else {
+                      $(ele).css({ left: c[0], top: c[1] });
+                    }
                   }
+                  if (d.key === selected.key) {
+                    $(ele).addClass('root');
+                  }
+                  $(ele).addClass('active');
                 }
-                if (d.key === selected.key) {
-                  $(ele).addClass('root');
-                }
-                $(ele).addClass('active');
               }
-            }
-            os.body.removeClass('animating');
+              os.body.removeClass('animating');
+            }, 50);
           });
     },
 

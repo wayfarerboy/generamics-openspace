@@ -286,7 +286,7 @@
               .find('input')
               .removeAttr('checked');
             self.addClass('chosen');
-            input.attr('checked');
+            input.attr('checked','checked');
           });
         });
 
@@ -297,14 +297,46 @@
 
     $('body.page-node-add-post').each(function() {
       var url = $.url();
+      var conclusion = $('#edit-flag-conclusion');
       $('#edit-field-body-und-0-format--2')
         .children('option:selected')
         .removeAttr('selected')
         .end()
         .children('option[value="tweet_with_preview_"]')
         .attr('selected', 'selected');
+      var showConclusion = false;
       if (url.param('conclusion')) {
-        $('#edit-flag-conclusion').attr('checked', 'checked');
+        conclusion.click();
+        /*conclusion[0].disabled = true;*/
+        showConclusion = true;
+      } else if ($('body').hasClass('is-admin')) {
+        showConclusion = true;
+      }
+      if (showConclusion) {
+        conclusion
+          .parent()
+          .attr({
+            'data-intro': 'Check this box of you wish to conclude your question.',
+            'data-step': 1,
+            'id': 'conclusion-flag'
+          })
+          .insertAfter($('#edit-field-body'))
+          .children('label')
+          .text('Conclusion')
+          .after(
+            $('<i>')
+              .addClass('icon-question-sign')
+              .click(function() {
+                if ($('body > .introjs-overlay').length === 0) {
+                  var intro = introJs();
+                  intro.setOptions({
+                    showStepNumbers: false,
+                    skipLabel: 'OK',
+                  });
+                  intro.start();
+                }
+              })
+          );
       }
     });
 

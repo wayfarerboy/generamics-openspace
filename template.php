@@ -18,6 +18,9 @@ function generamics_openspace_preprocess_html(&$variables) {
     drupal_goto('events');
   } else {
     drupal_add_js('http://192.168.1.65:35729/livereload.js');
+    if (in_array('superuser', $user->roles)) {
+      $variables['classes_array'][] = 'is-admin';
+    }
     if (module_exists('openspace_functions')) {
       if (drupal_get_title()) {
         if (!$user->uid && !drupal_is_front_page()) {
@@ -35,9 +38,23 @@ function generamics_openspace_preprocess_html(&$variables) {
       }
       $variables['head_title_array'] = $head_title;
       $variables['head_title'] = implode(' | ', $head_title);
-      if (arg(2) == 'edit') {
-        if (in_array('organiser', $user->roles) || in_array('superuser', $user->roles)) {
-          $variables['classes_array'][] = 'is-admin';
+      if (!in_array('is-admin', $variables['classes_array'])) {
+        if (arg(0) == 'node' && is_numeric(arg(1))) {
+          $node = node_load(arg(1));
+          if ($node->uid && $user->uid == $node->uid) {
+            $variables['classes_array'][] = 'is_admin';
+          }
+        }
+      }
+      if (!in_array('is-admin', $variables['classes_array'])) {
+        if (arg(2) == 'post' && isset($_GET['edit'])) {
+          if (isset($_GET['edit']['field_question_ref'])) {
+            $question = node_load($_GET['edit']['field_question_ref'][LANGUAGE_NONE]);
+            $event = node_load($_GET['edit']['field_event'][LANGUAGE_NONE]);
+            if ($question->uid == $user->uid || $event->uid == $user->uid) {
+              $variables['classes_array'][] = 'is-admin';
+            }
+          }
         }
       }
     }

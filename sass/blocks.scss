@@ -156,7 +156,7 @@
   width: 3em;
   margin: -1.5em;
   height: 3em;
-  p { display: none; }
+  span.username { display: none; }
   img {
     width: 3em;
     @include border-radius(0.35em);
@@ -394,13 +394,15 @@ li.activity,li.post { border: transparent solid 2px; }
       }
     }
     a.play {
-      padding: 0.5em;        
-      color: transparentize(black, 0.5);
+      padding: 1.2em 1.5em;        
       cursor: pointer;
-      position: relative;
+      position: absolute;
+      top: 0.6em;
+      left: 0.5em;
+      @include opacity(0);
       @include text-shadow(transparentize(white, 0.5) 1px 0);
-      &:hover,&:active {
-        color: black;
+      &:hover,&:active,&:focus {
+        @include opacity(1);
       }
     }
     &.playing a.play { display: none; }
@@ -438,7 +440,7 @@ li.activity,li.post { border: transparent solid 2px; }
         &.selected {
           color: white;
           @include text-shadow(none);
-          p.date, .p-name, .p-nickname, a {
+          p.date, a {
             color: transparentize(white, 0.3);
             @include text-shadow(none);
           }
@@ -446,7 +448,19 @@ li.activity,li.post { border: transparent solid 2px; }
             color: transparentize(black, 0.3);
           }
         }
+        .user-profile img {
+          width: 48px;
+        }
       }
+    }
+    div.data {
+      clear: left;
+      height: 0.2em;
+      @include clearfix;
+    }
+    span.username {
+      color: inherit;
+      @include opacity(0.7);
     }
     p.date {
       margin: 0;
@@ -457,6 +471,7 @@ li.activity,li.post { border: transparent solid 2px; }
       margin-right: 0.8em;
     }
     blockquote {
+      p { margin: 0; }
       line-height: 1.5;
       margin: 0.5em 0 0 4.5em;
       .opengraph-filter {
@@ -465,19 +480,6 @@ li.activity,li.post { border: transparent solid 2px; }
         background: transparentize(white, 0.8);
         font-size: 0.9em;
       }
-    }
-    .p-name {
-      font-size: 1.1em;
-      font-weight: bold;
-      position: relative;
-      top: 0.3em;
-    }
-    .p-nickname, p.date {
-      font-size: 0.9em;
-      color: transparentize(black, 0.5);
-      position: relative;
-      top: 0.35em;
-      @include text-shadow(none);
     }
   }
   li.activity.introjs-showElement a.discuss-link i.twitter {
