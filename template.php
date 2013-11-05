@@ -17,7 +17,7 @@ function generamics_openspace_preprocess_html(&$variables) {
   if ($user->uid && drupal_is_front_page()) {
     drupal_goto('events');
   } else {
-    drupal_add_js('http://192.168.1.65:35729/livereload.js');
+    //drupal_add_js('http://192.168.1.65:35729/livereload.js');
     if (in_array('superuser', $user->roles)) {
       $variables['classes_array'][] = 'is-admin';
     }
@@ -29,12 +29,16 @@ function generamics_openspace_preprocess_html(&$variables) {
         } else {
           $head_title = array( 'title' => strip_tags(drupal_get_title()) );
         }
-        $head_title['name'] = check_plain(openspace_functions_get_site_name());
+        //$head_title['name'] = check_plain(openspace_functions_get_site_name());
       } else {
-        $head_title = array('name' => check_plain(openspace_functions_get_site_name()));
-        if (variable_get('site_slogan', '')) {
-          $head_title['slogan'] = filter_xss_admin(variable_get('site_slogan', ''));
+        if (arg(0) == 'node' && is_numeric(arg(1))) {
+          $node = node_load(arg(1));
+          $head_title = array('name' => check_plain($node->title));
         }
+        //$head_title = array('name' => check_plain(openspace_functions_get_site_name()));
+        //if (variable_get('site_slogan', '')) {
+        //  $head_title['slogan'] = filter_xss_admin(variable_get('site_slogan', ''));
+        //}
       }
       $variables['head_title_array'] = $head_title;
       $variables['head_title'] = implode(' | ', $head_title);
@@ -65,10 +69,10 @@ function generamics_openspace_preprocess_page(&$variables) {
   global $user;
   $node = NULL;
   if ($user->uid) {
-    if (module_exists('openspace_functions')) {
-      $variables['site_name'] = openspace_functions_get_site_name();
-      $variables['logo'] = openspace_functions_get_site_logo();
-    }
+    //if (module_exists('openspace_functions')) {
+    //  $variables['site_name'] = openspace_functions_get_site_name();
+    //  $variables['logo'] = openspace_functions_get_site_logo();
+    //}
     $main_menu = '<i class="icon-reorder"></i>';
     $variables['main_menu_link'] = l($main_menu, 'events', array('html'=>true, 'attributes'=>array('id'=>'main-menu-link')));
     $variables['main_menu'] = '';
@@ -82,6 +86,9 @@ function generamics_openspace_preprocess_page(&$variables) {
           $variables['front_page'] = url('node/'.$node->nid);
           if (!arg(2)) {
             $variables['title'] = '';
+          } else if (arg(2) == 'edit') {
+            $variables['title'] = '';
+            drupal_set_title($node->title);
           }
         }
       }
@@ -279,14 +286,14 @@ function generamics_openspace_preprocess_user_login(&$variables) {
 
 function generamics_openspace_preprocess_user_profile(&$variables) {
   $variables['class'] = '';
-  $user = $variables['elements']['#account'];
+  $u = $variables['elements']['#account'];
   $variables['page'] = true;
   $profiles = array('large_profile', 'compact_profile', 'small_picture');
   $classes = array('profile-large', 'profile-compact', 'profile-small');
   $view = $variables['elements']['#view_mode'];
   if (in_array($view, $profiles)) {
     $variables['page'] = false;
-    $variables['name'] = $user->name;
+    $variables['name'] = $u->name;
     $variables['picture'] = drupal_render($variables['user_profile']['user_picture']);
     $variables['class'] = $classes[array_search($view, $profiles)];
     if ($view == 'small_picture') {

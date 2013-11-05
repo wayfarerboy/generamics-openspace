@@ -942,13 +942,14 @@ var ossunburst = (function ($, Drupal, window, document, undefined) {
         if (!hashtag.hasClass('expanded')) {
           if (node[0][0].__data__.depth - os.selected.depth === 1) {
             if (selected === 1 && typeof node[0][0] !== 'undefined') {
+              var newCol = os.cols[node[0][0].__data__.key][1];
+              var origCol = os.cols[node[0][0].__data__.key][0];
               node
-              .transition()
-                .duration(0)
+                .interrupt()
                 .style('fill', os.cols[node[0][0].__data__.key][1])
-              .transition()
-                .duration(os.slideDur * 4)
-                .style('fill', os.cols[node[0][0].__data__.key][0]);
+                .transition()
+                  .duration(os.slideDur * 4)
+                  .style('fill', os.cols[node[0][0].__data__.key][0]);
 
               hashtag.addClass('selected');
               label.addClass('selected');
